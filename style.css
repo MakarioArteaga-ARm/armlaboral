@@ -194,7 +194,7 @@ nav {
         rgba(14, 77, 146, 0.50) 0%,
         rgba(26, 91, 168, 0.50) 100%
     ),
-    url('index-page.jpeg') center/cover no-repeat;
+url('index-page.jpeg') center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
