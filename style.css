@@ -1025,3 +1025,16 @@ main {
         padding: 100px 0 50px;
     }
 }
+/* Animación de fade-in para el texto del Hero */
+.animated-hero-text {
+  /* Estado inicial: invisible y ligeramente desplazado hacia abajo */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-hero-text.is-visible {
+  /* Estado final: visible y en su posición original */
+  opacity: 1;
+  transform: translateY(0);
+}
