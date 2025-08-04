@@ -1,293 +1,106 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+
+    // --- MANEJO DEL MENÚ DE NAVEGACIÓN ---
+    // Selecciona los elementos relevantes del menú de navegación
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        // Alterna la visibilidad del menú y el estado del botón
+        function toggleMenu() {
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Cierra el menú y resetea el botón
+        function closeMenu() {
+            navLinks.classList.remove('show');
+            menuToggle.classList.remove('active');
+        }
+
+        // Abre/cierra el menú al hacer clic en el ícono
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                closeMenu();
             }
         });
-    });
 
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(14, 77, 146, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%)';
-            header.style.backdropFilter = 'none';
-        }
-    });
-
-    // Mobile menu toggle
-    const toggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    if (toggle && navLinks) {
-        toggle.addEventListener("click", function(e) {
-            e.stopPropagation();
-            navLinks.classList.toggle("show");
-            toggle.classList.toggle("active");
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function() {
-            navLinks.classList.remove("show");
-            toggle.classList.remove("active");
-        });
-
-        // Prevent menu from closing when clicking inside nav
-        navLinks.addEventListener("click", function(e) {
-            e.stopPropagation();
-        });
-
-        // Close menu when clicking on nav links
+        // Cierra el menú cuando se hace clic en un enlace de navegación
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove("show");
-                toggle.classList.remove("active");
-            });
+            link.addEventListener('click', closeMenu);
         });
     }
 
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+    // --- ANIMACIÓN DEL TEXTO EN LA SECCIÓN HERO AL CARGAR O HACER SCROLL ---
+    const heroText = document.querySelector('.animated-hero-text');
+    
+    // Configuración para el observador
+    const heroObserverOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa cuando el 10% del elemento es visible
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    // Callback que se ejecuta cuando el elemento es observado
+    const heroObserverCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si el elemento está en la vista, activa la animación
+                entry.target.classList.add('is-visible');
+                // Deja de observar para que la animación no se repita
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    // Crea y empieza a observar el elemento heroText
+    const heroObserver = new IntersectionObserver(heroObserverCallback, heroObserverOptions);
+    if (heroText) {
+        heroObserver.observe(heroText);
+    }
+    
+    // --- ANIMACIONES GENERALES DE SCROLL PARA SECCIONES CON LA CLASE 'fade-in' ---
+    const fadeInElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2 // Se activa cuando el 20% del elemento es visible
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
-
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Package cards hover effects
-    document.querySelectorAll('.paquete').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.borderTop = '4px solid #25D366';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.borderTop = '4px solid #0E4D92';
-        });
-    });
-
-    // Token cards hover effects
-    document.querySelectorAll('.token-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 12px 35px rgba(14, 77, 146, 0.15)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
-        });
-    });
-
-    // Service cards hover effects
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.borderLeft = '4px solid #25D366';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.borderLeft = '4px solid #0E4D92';
-        });
-    });
-
-    // WhatsApp button click tracking
-    const whatsappBtn = document.querySelector('.whatsapp-btn');
-    if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function() {
-            // Analytics tracking can be added here
-            console.log('WhatsApp button clicked');
-        });
-    }
-
-    // Floating contact button effects
-    const floatContact = document.querySelector('.float-contacto');
-    if (floatContact) {
-        floatContact.addEventListener('click', function() {
-            // Analytics tracking can be added here
-            console.log('Floating contact button clicked');
-        });
-    }
-
-    // Dynamic bokeh effect sizing
-    function updateBokehSizes() {
-        const bokehElements = document.querySelectorAll('.bokeh');
-        bokehElements.forEach(bokeh => {
-            const randomSize = Math.random() * 50 + 30; // 30-80px
-            const randomDelay = Math.random() * 20; // 0-20s delay
-            bokeh.style.width = randomSize + 'px';
-            bokeh.style.height = randomSize + 'px';
-            bokeh.style.animationDelay = randomDelay + 's';
-        });
-    }
-
-    // Initialize bokeh effects
-    updateBokehSizes();
-
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.hero-content');
-        
-        parallaxElements.forEach(element => {
-            const speed = 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-
-    // Add staggered animation to nav links
-    const navLinkItems = document.querySelectorAll('.nav-links li');
-    navLinkItems.forEach((item, index) => {
-        item.style.animationDelay = (index * 0.1) + 's';
-    });
-
-    // Add scroll-triggered animations for sections
-    const sections = document.querySelectorAll('section');
-    const sectionObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    });
-
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        sectionObserver.observe(section);
-    });
-
-    // Add typing effect to hero title (optional enhancement)
-    function typeWriter(element, text, speed = 100) {
-        let i = 0;
-        element.innerHTML = '';
-        
-        function type() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-
-    // Enhanced button animations
-    document.querySelectorAll('button, .whatsapp-btn, .float-contacto').forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
-
-    // Performance optimization: Throttle scroll events
-    let ticking = false;
+    }, fadeInOptions);
     
-    function updateOnScroll() {
-        // Header background update
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(14, 77, 146, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.background = 'linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%)';
-            header.style.backdropFilter = 'none';
-        }
-        
-        ticking = false;
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            requestAnimationFrame(updateOnScroll);
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', requestTick);
-
-    // Add loading animation
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-        
-        // Trigger hero animations
-        const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-description');
-        heroElements.forEach((element, index) => {
-            setTimeout(() => {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
+    fadeInElements.forEach(el => {
+        fadeInObserver.observe(el);
     });
 
-    // Add error handling for missing elements
-    function safeAddEventListener(selector, event, callback) {
-        const element = document.querySelector(selector);
-        if (element) {
-            element.addEventListener(event, callback);
-        }
-    }
-
-    // Initialize all safe event listeners
-    safeAddEventListener('.whatsapp-btn', 'click', function() {
-        console.log('WhatsApp consultation requested');
-    });
-
-    // Add keyboard navigation support
-    document.addEventListener('keydown', function(e) {
-        // Close mobile menu with Escape key
-        if (e.key === 'Escape') {
-            const navLinks = document.querySelector('.nav-links');
-            const toggle = document.querySelector('.menu-toggle');
-            if (navLinks && navLinks.classList.contains('show')) {
-                navLinks.classList.remove('show');
-                toggle.classList.remove('active');
+    // --- EFECTO DE SCROLL DEL HEADER ---
+    const header = document.querySelector('header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(14, 77, 146, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%)';
+                header.style.backdropFilter = 'none';
             }
-        }
-    });
-
-    // Add focus management for accessibility
-    const focusableElements = document.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-
-    focusableElements.forEach(element => {
-        element.addEventListener('focus', function() {
-            this.style.outline = '2px solid #25D366';
-            this.style.outlineOffset = '2px';
         });
-        
-        element.addEventListener('blur', function() {
-            this.style.outline = 'none';
-        });
-    });
+    }
 
-    console.log('ARmLaboral website initialized successfully! 🚀');
+    console.log('ARmLaboral website scripts loaded successfully! 🚀');
 });
