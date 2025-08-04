@@ -272,20 +272,23 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
-    color: white; /* Aseguramos que el texto sea blanco para que se vea bien */
+    color: white;
 }
 
-/* Agregado para que los h1 de las subpáginas también sean blancos y tengan el mismo estilo */
-.hero-tokens h1, .hero-nosotros h1, .hero-contacto h1 {
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/* Ajuste para que el texto de las subpáginas no se vea borroso */
+.hero-tokens h1, .hero-nosotros h1, .hero-contacto h1,
+.hero-tokens p, .hero-nosotros p, .hero-contacto p {
     font-family: 'Montserrat', sans-serif;
     color: #FFFFFF;
-    font-size: 3.5rem;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
     text-shadow: 0px 1px 4px rgba(0,0,0,0.6);
 }
-
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
@@ -746,5 +749,17 @@ footer .container > p {
         grid-template-columns: 1fr;
         max-width: 100%;
         text-align: center;
+    }
+
+    /* Ajustes específicos para el formulario de contacto */
+    .form-container {
+        padding: 1rem;
+    }
+    .input-field {
+        font-size: 0.9rem;
+    }
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }
