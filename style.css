@@ -1038,3 +1038,24 @@ main {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* === NUEVA ANIMACIÓN PARA EL HERO === */
+@keyframes slideAndFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px); /* Comienza deslizando desde la izquierda */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-title-animated {
+  animation: slideAndFadeIn 1s ease-out forwards;
+}
+
+.hero-subtitle-animated {
+  animation: slideAndFadeIn 1s ease-out 0.3s forwards; /* 0.3s de retraso */
+  opacity: 0; /* Comienza invisible hasta que la animación se activa */
+}
