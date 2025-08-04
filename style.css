@@ -204,19 +204,12 @@ nav {
     transform: translateY(-22.5px) rotate(-45deg);
 }
 
-/* Hero Section (Página principal) */
-.hero {
-    background: linear-gradient(
-        135deg,
-        rgba(14, 77, 146, 0.50) 0%,
-        rgba(26, 91, 168, 0.50) 100%
-    ),
-    url('index-page.jpeg') center/cover no-repeat;
-    filter: blur(2px);
-    color: white;
-    text-align: center;
+/* Contenedor del Hero para que el filtro de blur solo afecte al fondo */
+.hero-container {
     position: relative;
     overflow: hidden;
+    color: white;
+    text-align: center;
     padding: 120px 0 50px;
     min-height: 60vh;
     display: flex;
@@ -224,7 +217,25 @@ nav {
     justify-content: center;
 }
 
-/* Hero de la página de Tokens */
+/* Estilos para el fondo del hero principal con blur */
+.hero {
+    background: linear-gradient(
+        135deg,
+        rgba(14, 77, 146, 0.50) 0%,
+        rgba(26, 91, 168, 0.50) 100%
+    ),
+    url('index-page.jpeg') center/cover no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* Estilos para los fondos de las subpáginas (sin blur en el contenido) */
 .hero-tokens {
     background: linear-gradient(
         135deg,
@@ -234,14 +245,8 @@ nav {
     url('tokens-page.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: none;
-    padding: 120px 0 50px;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Hero de la página de Nosotros */
 .hero-nosotros {
     background: linear-gradient(
         135deg,
@@ -251,14 +256,8 @@ nav {
     url('nosotros-page.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: none;
-    padding: 120px 0 50px;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Hero de la página de Contacto */
 .hero-contacto {
     background: linear-gradient(
         135deg,
@@ -268,23 +267,25 @@ nav {
     url('contacto-page.jpg') center/cover no-repeat;
     background-attachment: fixed;
     filter: none;
-    padding: 120px 0 50px;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
+    color: white; /* Aseguramos que el texto sea blanco para que se vea bien */
 }
 
-.hero-content h1 {
+/* Agregado para que los h1 de las subpáginas también sean blancos y tengan el mismo estilo */
+.hero-tokens h1, .hero-nosotros h1, .hero-contacto h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
     font-size: 3.5rem;
-    margin-bottom: 1.5rem;
     font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.6);
 }
+
 
 .hero-title {
     font-family: 'Montserrat', sans-serif;
