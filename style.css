@@ -2,7 +2,7 @@
 *, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Universal box-sizing para un layout consistente */
+    box-sizing: border-box;
 }
 
 html, body {
@@ -174,7 +174,6 @@ nav {
     border-bottom: none;
 }
 
-/* ANIMACIÓN MEJORADA PARA LOS LINKS */
 @keyframes fadeInLink {
     to {
         opacity: 1;
@@ -187,7 +186,6 @@ nav {
 .nav-links.show li:nth-child(3) { animation-delay: 0.2s; }
 .nav-links.show li:nth-child(4) { animation-delay: 0.25s; }
 
-/* Hamburger Menu Animation */
 .hamburger-icon .bar {
     fill: white;
     transition: all 0.5s ease-in-out;
@@ -214,8 +212,7 @@ nav {
         rgba(26, 91, 168, 0.50) 100%
     ),
     url('index-page.jpeg') center/cover no-repeat;
-    /* Efecto de desenfoque sutil para la página principal */
-    filter: blur(2px); 
+    filter: blur(2px);
     color: white;
     text-align: center;
     position: relative;
@@ -227,19 +224,55 @@ nav {
     justify-content: center;
 }
 
-/* Estilos específicos para subpáginas */
-.hero-subpage {
-    /* Nueva imagen de fondo para las subpáginas */
+/* Hero de la página de Tokens */
+.hero-tokens {
     background: linear-gradient(
         135deg,
         rgba(14, 77, 146, 0.7) 0%,
         rgba(26, 91, 168, 0.7) 100%
     ),
-    url('https://placehold.co/1200x600/1a5ba8/ffffff?text=Fondo+de+Subp%C3%A1gina') center/cover no-repeat;
+    url('tokens-page.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: none;
     padding: 120px 0 50px;
     min-height: 40vh;
-    /* Se elimina el filtro blur para que se vea más nítido en las subpáginas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero de la página de Nosotros */
+.hero-nosotros {
+    background: linear-gradient(
+        135deg,
+        rgba(14, 77, 146, 0.7) 0%,
+        rgba(26, 91, 168, 0.7) 100%
+    ),
+    url('nosotros-page.jpg') center/cover no-repeat;
+    background-attachment: fixed;
     filter: none;
+    padding: 120px 0 50px;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero de la página de Contacto */
+.hero-contacto {
+    background: linear-gradient(
+        135deg,
+        rgba(14, 77, 146, 0.7) 0%,
+        rgba(26, 91, 168, 0.7) 100%
+    ),
+    url('contacto-page.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: none;
+    padding: 120px 0 50px;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
@@ -576,7 +609,6 @@ nav {
 /* Bordes azul-verde para cajas */
 .token-card,
 .service-card,
-.paquete,
 .intro-box,
 .usage-item {
     border-top: 4px solid transparent;
@@ -587,7 +619,6 @@ nav {
 
 .token-card:hover,
 .service-card:hover,
-.paquete:hover,
 .intro-box:hover,
 .usage-item:hover {
     border-top: 4px solid #25D366;
@@ -597,32 +628,32 @@ nav {
 footer {
     background: #333;
     color: white;
-    text-align: center; /* Esto centra la línea de copyright final */
+    text-align: center;
     padding: 2.5rem 0;
     position: relative;
     overflow: hidden;
 }
 
 .container {
-    max-width: 1200px; /* Ancho máximo del contenido del footer */
-    margin: 0 auto; /* Esto centra el contenedor .container en la página */
-    padding: 0 15px; /* Añade un poco de relleno horizontal para evitar que el contenido toque los bordes en pantallas pequeñas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem; /* Espacio entre los elementos de la cuadrícula */
+    gap: 2rem;
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
     justify-content: center;
-    align-items: start; /* Alinea los elementos al inicio de su celda de cuadrícula verticalmente */
+    align-items: start;
 }
 
 .footer-section {
-    text-align: center; /* Centra el texto dentro de cada sección del footer */
-    padding: 0 10px; /* Añade un poco de padding interno para evitar que el texto toque los bordes */
+    text-align: center;
+    padding: 0 10px;
 }
 
 .footer-section h3 {
