@@ -38,7 +38,6 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <!-- Se eliminan estilos en línea -->
                 <a href="index.html">
                     <img src="logo-header.png" alt="ARm Laboral Logo" width="45" height="45">
                     <span>ARm Laboral</span>
@@ -54,11 +53,11 @@
             </div>
 
             <ul class="nav-links">
-                <!-- Se actualiza el menú de navegación para reflejar los cambios -->
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="tokens.html">Tokens</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li> <!-- Asegúrate de que este enlace apunte a esta página -->
+                <!-- El enlace a Contacto ahora apunta al archivo HTML correcto -->
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -67,7 +66,6 @@
 <section class="hero hero-subpage">
     <div class="container">
         <div class="hero-content">
-            <!-- Se eliminan estilos en línea -->
             <h1>Contáctanos</h1>
             <p class="hero-subtitle">Estamos listos para ayudarte a encontrar la solución perfecta.</p>
             <p class="hero-description">Envíanos un mensaje y cotiza ahora para tu empresa.</p>
@@ -136,8 +134,9 @@
         </div>
     </main>
 
-    <!-- CTA Section - Extraído de tokens.html -->
-    <section class="cta-section" id="contacto-alternativo"> <!-- ID cambiado para evitar conflicto si ya tienes #contacto en el footer -->
+    <!-- CTA Section -->
+    <!-- Se actualiza el id del cta de esta página -->
+    <section class="cta-section" id="contacto-cta">
         <div class="container">
             <div class="cta-content">
                 <h2 class="cta-title">¿Listo para proteger tu empresa?</h2>
@@ -149,18 +148,16 @@
         </div>
     </section>
 
-    <!-- Footer - Extraído de tokens.html -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <!-- Se eliminan estilos en línea -->
                     <h3><a href="index.html">ARm Laboral</a></h3>
                     <p>Sistema de prevención legal por tokens para empresas. Protege tu negocio de manera inteligente y económica.</p>
                 </div>
 
                 <div class="footer-section">
-                    <!-- Se eliminan estilos en línea -->
                     <h3><a href="contacto.html">Contacto</a></h3>
                     <p>Telefono: <a href="tel:+528123682595"> +52 (81) 2368-2595</a></p>
                     <p>Email: <a href="mailto:info@armlaboral.com">info@armlaboral.com</a></p>
@@ -177,49 +174,13 @@
         </div>
     </footer>
 
-    <!-- Floating Contact Button - Extraído de tokens.html -->
+    <!-- Floating Contact Button -->
     <a class="float-contacto" href="https://wa.me/528123682595?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20tokens%20ARmLaboral" target="_blank" aria-label="Contactar por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="white" width="28" height="28">
             <path d="M511.1 387.1l-23.6 99.5c-3.3 14.1-16.3 24.4-30.9 24.4C222.8 512 0 289.2 0 55.4 0 40.8 10.3 27.8 24.4 24.5l99.5-23.6c12.3-2.9 25.3 1.5 33.2 11.4l66.5 85c8.3 10.6 8.2 25.5-.3 36l-43.7 55.3c29.6 54.1 78.4 102.8 132.5 132.5l55.3-43.7c10.5-8.5 25.4-8.6 36-.3l85 66.5c9.8 7.9 14.2 20.9 11.2 33.1z"/>
         </svg>
     </a>
 
-    <!-- Scripts - Extraído de tokens.html y el formulario original -->
     <script src="script.js"></script>
-    <script>
-        // Obtiene el formulario por su ID
-        const contactForm = document.getElementById('contactForm');
-        // Obtiene el elemento del mensaje de éxito por su ID
-        const successMessage = document.getElementById('successMessage');
-
-        // Agrega un 'event listener' para cuando se envíe el formulario
-        contactForm.addEventListener('submit', function(event) {
-            // Previene el comportamiento por defecto del formulario (recargar la página)
-            event.preventDefault();
-
-            // Aquí normalmente enviarías los datos a un servidor (backend)
-            // Por ahora, solo mostraremos un mensaje en la consola y el mensaje de éxito en la página.
-
-            // Recopilar los datos del formulario (ejemplo)
-            const formData = new FormData(contactForm);
-            const data = {};
-            for (let [key, value] of formData.entries()) {
-                data[key] = value;
-            }
-            console.log('Datos del formulario enviados:', data);
-
-            // Simular un envío exitoso
-            // Oculta el formulario y muestra el mensaje de éxito
-            contactForm.reset(); // Limpia los campos del formulario
-            contactForm.classList.add('hidden'); // Oculta el formulario
-            successMessage.classList.remove('hidden'); // Muestra el mensaje de éxito
-
-            // Opcional: Ocultar el mensaje de éxito después de unos segundos y mostrar el formulario de nuevo
-            setTimeout(() => {
-                successMessage.classList.add('hidden');
-                contactForm.classList.remove('hidden');
-            }, 5000); // 5 segundos
-        });
-    </script>
 </body>
 </html>
