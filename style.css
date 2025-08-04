@@ -41,6 +41,20 @@ ul, ol {
     padding: 0 15px;
 }
 
+/* Clases de utilidad para estilos en línea eliminados */
+.padded-top-60 {
+    padding-top: 60px;
+}
+
+.centered-cta-btn {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.intro-box-no-margin {
+    margin-bottom: 0;
+}
+
 /* Header - Improved */
 header {
     background: linear-gradient(135deg, #0E4D92 0%, #1a5ba8 100%);
@@ -70,6 +84,14 @@ nav {
 }
 
 /* Se han re-añadido los estilos del logo del header */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    text-decoration: none;
+    color: white;
+}
+
 .logo img {
     height: 65px;
     width: auto;
@@ -79,7 +101,6 @@ nav {
     fill: white;
 }
 
-/* Se ha eliminado la referencia a hero-logo-text ya que ya no existe en el HTML del hero */
 .menu-toggle {
     display: block;
     font-size: 1.2rem;
@@ -208,9 +229,28 @@ nav {
     justify-content: center; /* Nuevo: Centra horizontalmente */
 }
 
+/* Estilos específicos para subpáginas */
+.hero-subpage {
+    background: linear-gradient(
+        135deg,
+        rgba(14, 77, 146, 0.50) 0%,
+        rgba(26, 91, 168, 0.50) 100%
+    ),
+    url('subpage-hero.jpeg') center/cover no-repeat;
+    padding: 120px 0 50px;
+    min-height: 40vh;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
+}
+
+/* Se eliminan estilos en línea del H1 */
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
 }
 
 /* --- Nuevo estilo para el hero title --- */
@@ -235,6 +275,22 @@ nav {
     margin-top: 0;
 }
 
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+.hero-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
 /* Intro Section */
 .intro-section {
     padding: 15px 0;
@@ -252,13 +308,8 @@ nav {
     overflow: hidden;
 }
 
-.intro-box h2 {
-    color: #0E4D92;
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
-.intro-box p {
+/* Se eliminan estilos en línea */
+.intro-box p.mission-vision {
     font-size: 1.1rem;
     line-height: 1.6;
 }
@@ -693,10 +744,10 @@ footer {
     font-size: 1.2rem;
 }
 
-/* Asegura que los enlaces dentro de h3 en el footer hereden el tamaño de fuente */
+/* Se eliminan estilos en línea del footer */
 .footer-section h3 a {
-    font-size: inherit; /* Hereda el tamaño de fuente del h3 padre */
-    color: inherit; /* Hereda el color del h3 padre */
+    color: inherit;
+    text-decoration: none;
 }
 
 .footer-section p,
@@ -719,6 +770,81 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
     color: #aaa; /* Color ligeramente más claro para el copyright */
 }
 
+/* Estilos de la página de contacto */
+.form-container {
+    max-width: 100%; /* Ancho fluido para responsividad */
+    padding: 1.5rem; /* Padding base */
+    margin: 2rem auto; /* Centrar el contenedor y darle margen superior/inferior */
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+/* Estilos para los campos de entrada */
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e0; /* Color de borde gris */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    font-size: 1rem;
+    color: #333; /* Color del texto dentro del input */
+    outline: none; /* Quitar el contorno al enfocar */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #0056b3; /* Azul de ARm Laboral al enfocar */
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2); /* Sombra suave al enfocar */
+}
+
+/* Estilos para el botón de envío */
+.submit-button {
+    background-color: #0056b3; /* Azul de ARm Laboral */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem; /* Bordes más redondeados */
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #004494; /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.submit-button:active {
+    transform: translateY(0); /* Quitar efecto al hacer click */
+}
+
+/* Asegura que el contenido principal tenga padding */
+main {
+    padding-top: 2rem; /* Espacio desde el hero */
+    padding-bottom: 2rem; /* Espacio antes del CTA */
+}
+
+/* Mobile Responsiveness (ajustes específicos para esta página) */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    .hero-subtitle-new {
+        font-size: 1.1rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+        margin: 1rem auto; /* Ajuste de margen en móvil */
+    }
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+
 /* Ajustes responsivos para pantallas más pequeñas (opcional, pero recomendado) */
 @media (max-width: 768px) {
     .float-contacto {
@@ -737,15 +863,80 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
         padding: 40px 0;
     }
 
-    /* Ajuste para el nuevo hero en móvil */
-    .hero-title {
-        font-size: 2rem; /* Tamaño de fuente más pequeño para móviles */
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
-    .hero-subtitle-new {
-        font-size: 1.1rem;
+    .hero-description {
+        font-size: 0.9rem;
     }
 
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-logo-text {
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    .hero-logo-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-logo-text img {
+        height: 100px;
+        transform: translateY(8px);
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .packages-grid,
+    .token-grid,
+    .usage-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .paquete {
+        padding: 2rem;
+    }
+
+    .usage-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .usage-icon {
+        margin-right: 0;
+        width: auto;
+    }
+
+    .usage-tokens {
+        margin-left: 0;
+    }
+
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        right: 5px;
+        top: 65px;
+        background: rgba(14, 77, 146, 0.98);
+        backdrop-filter: blur(15px);
+        min-width: 160px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 10px 8px;
+    }
+    
     .footer-content {
         /* En pantallas más pequeñas, apila las secciones en una sola columna */
         grid-template-columns: 1fr;
@@ -819,7 +1010,6 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
     position: relative;
     z-index: 2;
 }
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .logo img {
@@ -833,75 +1023,5 @@ footer .container > p { /* Dirige el párrafo directamente dentro del contenedor
     /* Se ha actualizado el padding del hero para móvil */
     .hero {
         padding: 100px 0 50px;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    /* Se ha actualizado el font-size del h1 para móvil */
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-logo-text {
-        flex-direction: column;
-        gap: 0.1rem;
-    }
-
-    .hero-logo-text h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-logo-text img {
-        height: 100px;
-        transform: translateY(8px);
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .packages-grid,
-    .token-grid,
-    .usage-grid,
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .paquete {
-        padding: 2rem;
-    }
-
-    .usage-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-
-    .usage-icon {
-        margin-right: 0;
-        width: auto;
-    }
-
-    .usage-tokens {
-        margin-left: 0;
-    }
-
-    .cta-title {
-        font-size: 1.8rem;
-    }
-
-    .nav-links {
-        right: 5px;
-        top: 65px;
-        background: rgba(14, 77, 146, 0.98);
-        backdrop-filter: blur(15px);
-        min-width: 160px;
-    }
-
-    .nav-links a {
-        font-size: 0.95rem;
-        padding: 10px 8px;
     }
 }
