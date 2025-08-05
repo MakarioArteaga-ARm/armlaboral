@@ -966,23 +966,6 @@ main {
     display: none !important;
 }
 
-/* Imagen de fondo del index.html */
-.hero {
-    /* Aquí se ajustó el padding-top para darle más espacio al título */
-    padding: 120px 0 50px;
-    /* Se ha actualizado el fondo para usar la imagen proporcionada y un overlay */
-    background: linear-gradient(
-        135deg,
-        rgba(14, 77, 146, 0.50) 0%,
-        rgba(26, 91, 168, 0.50) 100%
-    ),
-    url('index-page.jpeg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 60vh;
-}
 .hero-content {
     position: relative;
     z-index: 2;
