@@ -987,8 +987,8 @@ main {
 }
 /* Animación de fade-in para el texto del Hero */
 .animated-hero-text {
-  /* Estado inicial: invisible y ligeramente desplazado hacia abajo */
-  opacity: 0;
+  /* Estado inicial: visible y ligeramente desplazado hacia abajo */
+  /* opacity: 0; (Se ha comentado para que el texto sea visible por defecto) */
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
