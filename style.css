@@ -1036,3 +1036,27 @@ main {
   animation-fill-mode: forwards;
   opacity: 0;
 }
+@keyframes pulseEffect {
+    0% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(14, 77, 146, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(14, 77, 146, 0); }
+}
+
+.float-contacto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0E4D92;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    animation: pulseEffect 2s infinite; /* Esta línea aplica la animación */
+}
