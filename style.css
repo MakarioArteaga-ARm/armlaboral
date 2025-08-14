@@ -1123,3 +1123,9 @@ main {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
     }
 }
+/* Quitamos el contorno al dar click en los enlaces del footer */
+footer a:focus,
+footer a:active {
+    outline: none;
+    box-shadow: none;
+}
