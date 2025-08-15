@@ -173,7 +173,7 @@ nav a:focus {
 
 .hero p.lead {
     font-size: 1.25rem;
-    color: var(--card); /* Texto en color blanco para que sea visible */
+    color: var(--card);
     max-width: 55ch;
     margin-bottom: 24px;
     font-family: 'Montserrat', sans-serif;
@@ -633,18 +633,6 @@ textarea.input {
         justify-content: center;
     }
     .nav {
-      flex-wrap: wrap;
-    }
-    .nav .brand {
-      flex-grow: 1;
       justify-content: space-between;
     }
-    .nav .menu-toggle {
-      position: absolute;
-      right: 18px;
-    }
-    .nav nav {
-      width: 100%;
-    }
 }
-
