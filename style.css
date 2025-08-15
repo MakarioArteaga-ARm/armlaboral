@@ -109,9 +109,9 @@ nav a:focus {
 .hamburger span {
     display: block;
     width: 26px;
-    height: 2px;
+    height: 3px;
     background: var(--card);
-    margin: 6px 0;
+    margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
 
@@ -202,6 +202,7 @@ nav a:focus {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-family: 'Montserrat', sans-serif;
 }
+
 .btn.ghost {
   background: none;
   border: 1px solid var(--card);
@@ -630,5 +631,13 @@ textarea.input {
     }
     .center .actions {
         justify-content: center;
+    }
+    .nav {
+        justify-content: space-between;
+    }
+    .brand-mobile {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
     }
 }
