@@ -109,9 +109,9 @@ nav a:focus {
 .hamburger span {
     display: block;
     width: 26px;
-    height: 3px;
+    height: 2px;
     background: var(--card);
-    margin: 5px 0;
+    margin: 6px 0;
     transition: all 0.3s ease-in-out;
 }
 
@@ -173,7 +173,7 @@ nav a:focus {
 
 .hero p.lead {
     font-size: 1.25rem;
-    color: var(--card);
+    color: var(--card); /* Texto en color blanco para que sea visible */
     max-width: 55ch;
     margin-bottom: 24px;
     font-family: 'Montserrat', sans-serif;
@@ -631,19 +631,5 @@ textarea.input {
     }
     .center .actions {
         justify-content: center;
-    }
-    .nav {
-      flex-wrap: wrap;
-    }
-    .nav .brand {
-      flex-grow: 1;
-      justify-content: space-between;
-    }
-    .nav .menu-toggle {
-      position: absolute;
-      right: 18px;
-    }
-    .nav nav {
-      width: 100%;
     }
 }
