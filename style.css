@@ -24,7 +24,7 @@ html {
 body {
     font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     font-size: 16px;
-    line-height: 1.7; /* <-- CAMBIO AQUÍ */
+    line-height: 1.7;
     color: var(--ink);
     background-color: var(--card);
 }
@@ -124,7 +124,6 @@ nav a:focus {
     background-position: center;
     color: white;
 }
-/* Fondo con la imagen y el gradiente azulado para cada página */
 .hero.hero-index {
     background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('index-page.jpeg');
 }
@@ -138,7 +137,6 @@ nav a:focus {
     background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('contacto-page.jpg');
 }
 
-/* Color de texto del hero cuando hay imagen de fondo */
 .hero h1, .hero p.lead {
     color: var(--card);
 }
@@ -173,7 +171,7 @@ nav a:focus {
 
 .hero p.lead {
     font-size: 1.25rem;
-    color: var(--card); /* Texto en color blanco para que sea visible */
+    color: var(--card);
     max-width: 55ch;
     margin-bottom: 24px;
     font-family: 'Montserrat', sans-serif;
@@ -187,29 +185,6 @@ nav a:focus {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-}
-
-.cta {
-    display: inline-block;
-    background: var(--primary);
-    color: var(--card);
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 50px;
-    font-weight: 700;
-    box-shadow: var(--ring);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.btn.ghost {
-  background: none;
-  border: 1px solid var(--card);
-  color: var(--card);
-}
-.btn.ghost:hover {
-  background: var(--card);
-  color: var(--primary);
 }
 
 .hero-card {
@@ -239,7 +214,7 @@ nav a:focus {
 }
 
 .hero-list li {
-    margin: 12px 0; /* <-- CAMBIO AQUÍ */
+    margin: 12px 0;
     padding-left: 20px;
     position: relative;
     font-family: 'Montserrat', sans-serif;
@@ -406,26 +381,38 @@ footer p.sub {
     font-family: 'Montserrat', sans-serif;
 }
 
-.btn.alt {
-    background: var(--accent);
-}
 .btn.primary {
     background: var(--primary);
     color: var(--card);
 }
+.btn.primary:hover {
+    background: #00366D;
+}
+
 .btn.ghost {
     background: transparent;
     border: 1px solid var(--primary);
     color: var(--primary);
 }
-
-.btn.primary:hover {
-    background: #00366D;
-}
 .btn.ghost:hover {
     background: var(--primary);
     color: var(--card);
 }
+
+/* ===== INICIO DE LA CORRECCIÓN ===== */
+/* Estilo específico para el botón "ghost" DENTRO del hero */
+.hero .btn.ghost {
+    background: var(--card); /* Fondo blanco */
+    border: 1px solid var(--card); /* Borde blanco */
+    color: var(--primary); /* Letra azul */
+}
+.hero .btn.ghost:hover {
+    background: transparent; /* Fondo transparente al pasar el mouse */
+    border: 1px solid var(--card); /* Borde blanco */
+    color: var(--card); /* Letra blanca */
+}
+/* ===== FIN DE LA CORRECCIÓN ===== */
+
 
 /* Footer */
 footer {
@@ -470,7 +457,6 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
-/* Regla de estilo para los h4 dentro de las baldosas */
 .tile h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
@@ -492,7 +478,6 @@ footer {
     transform: translateY(-3px);
     box-shadow: var(--ring-hover);
 }
-
 
 .form {
     background: var(--card);
@@ -567,7 +552,6 @@ textarea.input {
     width: 28px;
     height: 28px;
 }
-/* Animación de pulso para los botones de WhatsApp */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
