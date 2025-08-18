@@ -70,35 +70,35 @@
         <form class="form animate-on-scroll" id="contact-form">
           <div class="row">
             <div>
-              <label class="label">Nombre</label>
-              <input class="input" type="text" name="entry.1895408621" required placeholder="Nombre" />
+              <label class="label" for="nombre">Nombre</label>
+              <input class="input" type="text" id="nombre" name="entry.1895408621" required placeholder="Nombre" />
             </div>
             <div>
-              <label class="label">Empresa</label>
-              <input class="input" type="text" name="entry.2079825524" required placeholder="Empresa" />
+              <label class="label" for="empresa">Empresa</label>
+              <input class="input" type="text" id="empresa" name="entry.2079825524" required placeholder="Empresa" />
             </div>
           </div>
           <div class="row">
             <div>
-              <label class="label">Email</label>
-              <input class="input" type="email" name="entry.293467260" required placeholder="tunombre@empresa.com" />
+              <label class="label" for="email">Email</label>
+              <input class="input" type="email" id="email" name="entry.293467260" required placeholder="tunombre@empresa.com" />
             </div>
             <div>
-              <label class="label">Teléfono</label>
-              <input class="input" type="tel" name="entry.1262039255" required placeholder="+52 81 ..." />
+              <label class="label" for="telefono">Teléfono</label>
+              <input class="input" type="tel" id="telefono" name="entry.1262039255" required placeholder="+52 81 ..." />
             </div>
           </div>
-          <label class="label">¿En qué podemos ayudarte?</label>
-          <textarea class="input" name="entry.1131486204" placeholder="Cuéntanos brevemente el contexto" required></textarea>
+          <label class="label" for="mensaje">¿En qué podemos ayudarte?</label>
+          <textarea class="input" id="mensaje" name="entry.1131486204" placeholder="Cuéntanos brevemente el contexto" required></textarea>
           <div class="actions" style="justify-content: flex-end;">
             <button class="btn primary" type="submit">Enviar Mensaje</button>
           </div>
           <p class="sub" style="margin-top:8px">Al enviar, aceptas nuestro <a href="aviso-de-privacidad.html">Aviso de privacidad</a>.</p>
         </form>
 
-        <div id="success-message" class="center" style="display: none; padding: 40px; border: 1px solid #E6EAF2; border-radius: 12px; background: #F8F9FA; text-align: center;">
-            <h2>¡Gracias por tu mensaje!</h2>
-            <p class="sub" style="margin: 0 auto;">Hemos recibido tu información y nos pondremos en contacto contigo a la brevedad.</p>
+        <div id="status-message" class="center" style="display: none; padding: 40px; border: 1px solid #E6EAF2; border-radius: 12px; background: #F8F9FA; text-align: center;">
+            <h2 id="status-title"></h2>
+            <p id="status-text" class="sub" style="margin: 0 auto;"></p>
         </div>
       </div>
     </section>
@@ -128,29 +128,6 @@
   </a>
   
   <script src="script.js" defer></script>
-  
-  <script>
-    const form = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-    const formActionURL = 'https://docs.google.com/forms/d/e/1FAIpQLSelsdhNiJpAjtws-8DmcWVid5VIcoLP9VQ1EgVLan3XPQaJQw/formResponse';
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      
-      fetch(formActionURL, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      }).then(() => {
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
-      }).catch(error => {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar el formulario. Por favor, intenta de nuevo.');
-      });
-    });
-  </script>
-
+  <script src="contact-form.js" defer></script>
 </body>
 </html>
