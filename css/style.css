@@ -125,16 +125,22 @@ header {
     color: white;
 }
 .hero.hero-index {
-    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('index-page.jpeg');
+    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('../images/index-page.jpeg');
+}
+.hero.min {
+    padding: 60px 0;
 }
 .hero.min.hero-nosotros {
-    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('nosotros-page.jpg');
+    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('../images/nosotros-page.jpg');
 }
 .hero.min.hero-tokens {
-    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('tokens-page.jpg');
+    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('../images/tokens-page.jpg');
 }
 .hero.min.hero-contacto {
-    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('contacto-page.jpg');
+    background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('../images/contacto-page.jpg');
+}
+.hero.min.hero-aviso {
+  background-image: linear-gradient(rgba(14, 77, 146, 0.6), rgba(14, 77, 146, 0.6)), url('../images/aviso-de-privacidad.jpg');
 }
 
 .hero h1, .hero p.lead {
