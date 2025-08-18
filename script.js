@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- NUEVO: Lógica para Animación de Scroll ---
+  // --- Lógica para Animación de Scroll (ya existente) ---
   const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
   const observer = new IntersectionObserver((entries) => {
