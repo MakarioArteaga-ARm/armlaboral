@@ -51,6 +51,11 @@
       background-size: cover;
       background-position: center;
     }
+    /* Regla para anular el grid y centrar el contenido */
+    .hero-aviso .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
   </style>
   <script src="script.js" defer></script>
 </head>
@@ -75,12 +80,11 @@
 
   <main>
     <section class="hero min hero-aviso">
-      <!-- El estilo de centrado se aplica a este contenedor para que afecte a todos los elementos dentro de él. -->
-      <div class="container hero-inner" style="grid-template-columns:1fr; text-align: center;">
+      <!-- Se ha removido el estilo en línea para aplicar la nueva clase -->
+      <div class="container hero-inner">
         <div>
           <span class="kicker">Legal</span>
           <h1>Aviso de Privacidad</h1>
-          <!-- El estilo ya no es necesario aquí porque lo hereda del padre. -->
           <p class="lead">Su información está segura con nosotros.</p>
         </div>
       </div>
