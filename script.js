@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('nav ul');
+  const menu = document.querySelector('.main-menu ul');
   
   if (toggle && menu) {
     // Evento para abrir/cerrar el menú con el botón
