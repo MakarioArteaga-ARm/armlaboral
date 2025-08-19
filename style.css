@@ -335,14 +335,17 @@ section {
     gap: 24px;
 }
 
+/* Estilos mejorados para las cards y los elementos interactivos */
 .card {
     padding: 24px;
     display: flex;
     flex-direction: column;
+    /* Nuevos estilos de hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--ring-hover), inset 0px 2px 6px rgba(255,255,255,0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1), inset 0px 2px 6px rgba(255,255,255,0.3);
 }
 
 .card .actions {
@@ -372,6 +375,8 @@ section {
 .pill:hover {
     background-color: var(--primary-dark);
     color: var(--card);
+    transform: scale(1.05);
+    box-shadow: var(--ring-hover);
 }
 
 .vals {
@@ -383,13 +388,29 @@ section {
 
 .val {
     padding: 16px;
+    /* Nuevos estilos de hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.val:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--ring-hover);
 }
 
 .val strong {
     display: block;
     margin-bottom: 6px;
-    color: var(--primary-dynamic);
+    /* Aquí se aplica el degradado al texto */
+    background: linear-gradient(90deg, var(--primary-dynamic), var(--celeste-vibrante));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 700;
+    transition: all 0.3s ease;
+}
+.val:hover strong {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--primary-dark);
 }
 
 .val .sub {
@@ -455,10 +476,11 @@ footer .brand { color: var(--card); }
 .btn.primary {
     background: var(--primary-dark);
     color: var(--card);
+    transition: all 0.3s ease-in-out;
 }
 .btn.primary:hover {
     background: #00366D;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -466,20 +488,23 @@ footer .brand { color: var(--card); }
     background: transparent;
     border: 1px solid var(--primary-dark);
     color: var(--primary-dark);
+    transition: all 0.3s ease-in-out;
 }
 .btn.ghost:hover {
     background: var(--primary-dark);
     color: var(--card);
+    transform: translateY(-2px) scale(1.05);
 }
 
 .btn.hero-alt {
     background: rgba(255,255,255,0.9);
     border-color: transparent;
     color: var(--primary-dark);
+    transition: all 0.3s ease-in-out;
 }
 .btn.hero-alt:hover {
     background: white;
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
