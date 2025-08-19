@@ -655,4 +655,5 @@ footer p.sub,
 footer .foot a,
 footer .credits {
     color: var(--ink);
+    text-decoration: none;
 }
