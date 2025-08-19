@@ -192,7 +192,7 @@ header.scrolled .logo-dark {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
     align-items: center;
-    text-align: left; /* Alineado a la izquierda */
+    text-align: left;
 }
 
 .hero-curve {
@@ -290,6 +290,9 @@ section {
 .cta-final-bg {
     background: transparent;
     text-align: center;
+    /* Ajuste de margen para la sección CTA final en la página de soluciones */
+    margin-top: 40px;
+    padding-top: 40px;
 }
 .cta-final-bg .title-accent {
   color: var(--primary-dark);
@@ -299,6 +302,7 @@ section {
   color: var(--ink);
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px; /* Ajuste para separar el texto del botón */
 }
 .cta-final-bg .actions {
     margin-top: 20px;
@@ -340,7 +344,6 @@ section {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    /* Nuevos estilos de hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
@@ -388,7 +391,6 @@ section {
 
 .val {
     padding: 16px;
-    /* Nuevos estilos de hover */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -400,7 +402,6 @@ section {
 .val strong {
     display: block;
     margin-bottom: 6px;
-    /* Aquí se aplica el degradado al texto */
     background: linear-gradient(90deg, var(--primary-dynamic), var(--celeste-vibrante));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -419,8 +420,8 @@ section {
 
 /* Footer */
 footer {
-    background-color: transparent; /* CAMBIO: Fondo transparente */
-    color: rgba(255, 255, 255, 0.8); /* CAMBIO: Color de texto claro */
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.8);
     position: relative;
 }
 
@@ -431,24 +432,24 @@ footer {
     padding: 30px 0;
     align-items: center;
 }
-/* CAMBIO: Lógica de logo invertida para fondo oscuro */
+
 footer .brand .logo-white { opacity: 1; }
 footer .brand .logo-dark { opacity: 0; }
-/* CAMBIO: Color de texto de la marca a blanco */
 footer .brand { color: var(--card); }
 
-.foot a {
-    color: var(--card); /* CAMBIO: Color de enlaces a blanco */
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Se aplica el cambio de color de letra solo a los elementos de texto dentro del footer */
+footer div,
+footer p.sub,
+footer a,
+footer strong {
+    color: #A0AEC0;
 }
 
-.foot a:hover {
+footer a:hover {
     color: var(--celeste-vibrante);
 }
 
 .credits {
-    /* CAMBIO: Borde y color de texto claros */
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 16px 0;
     color: rgba(255, 255, 255, 0.6);
