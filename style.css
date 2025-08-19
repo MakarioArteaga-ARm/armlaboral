@@ -192,6 +192,7 @@ header.scrolled .logo-dark {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
     align-items: center;
+    text-align: left; /* Alineado a la izquierda */
 }
 
 .hero-curve {
@@ -482,6 +483,53 @@ footer .brand { color: var(--card); }
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Formulario */
+.form-link {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.form-link:hover {
+    color: var(--celeste-vibrante);
+}
+
+.label {
+    font-weight: 700;
+    margin: 12px 0 6px;
+    display: block;
+    color: var(--primary-dark);
+}
+
+.input {
+    width: 100%;
+    padding: 12px 18px;
+    border: 1px solid rgba(13, 71, 161, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--primary-dynamic);
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+textarea.input {
+    min-height: 140px;
+    resize: vertical;
+    margin-bottom: 12px;
+}
+
 /* Animaciones de Scroll */
 .animate-on-scroll {
   opacity: 0;
@@ -525,7 +573,7 @@ footer .brand { color: var(--card); }
 
 /* Responsive */
 @media (max-width: 900px) {
-    .hero-inner, .grid-2, .foot {
+    .hero-inner, .grid-2, .foot, .row {
         grid-template-columns: 1fr;
         gap: 30px;
     }
