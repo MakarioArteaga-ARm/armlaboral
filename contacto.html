@@ -46,10 +46,10 @@
       </a>
       <div class="main-menu" id="main-menu">
         <ul>
-          <li><a href="index.html#inicio">Inicio</a></li>
-          <li><a href="index.html#soluciones">Soluciones</a></li>
-          <li><a href="index.html#nosotros">Nosotros</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="soluciones.html">Soluciones</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
       <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
@@ -59,12 +59,20 @@
   </header>
 
   <main>
-    <section class="hero min" style="background-color: transparent;">
-      <div class="container hero-inner" style="grid-template-columns:1fr">
-        <div class="animate-on-scroll" style="text-align:center;">
+    <section class="hero hero-index" style="background-color: transparent;">
+      <svg class="hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path d="M0,120 C480,0 960,0 1440,120 Z"></path>
+      </svg>
+      <div class="container hero-inner">
+        <div class="animate-on-scroll" style="text-align: left;">
           <span class="kicker">Contacto</span>
-          <h1 class="title-accent">Escríbenos y te respondemos hoy.</h1>
-          <p class="sub">Cuéntanos qué necesitas y preparamos un diagnóstico breve con siguientes pasos.</p>
+          <h1 class="glass-text">Escríbenos</h1>
+          <h2 class="glass-text">y te respondemos hoy.</h2>
+          <p class="lead" style="color: rgba(255,255,255,0.7);">Cuéntanos qué necesitas y preparamos un diagnóstico breve con siguientes pasos.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://wa.me/528123682595?text=Hola%2C%20quisiera%20solicitar%20una%20consulta." target="_blank">Agendar una conversación</a>
+            <a class="btn hero-alt" href="mailto:info@armlaboral.com">Escribir correo</a>
+          </div>
         </div>
       </div>
     </section>
