@@ -79,7 +79,6 @@ header.scrolled {
 }
 
 header.scrolled .brand,
-header.scrolled .main-menu a,
 header.scrolled .menu-toggle {
     color: var(--primary-dark);
 }
@@ -290,7 +289,6 @@ section {
 .cta-final-bg {
     background: transparent;
     text-align: center;
-    /* Ajuste de margen para la sección CTA final en la página de soluciones */
     margin-top: 40px;
     padding-top: 40px;
 }
@@ -302,7 +300,7 @@ section {
   color: var(--ink);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px; /* Ajuste para separar el texto del botón */
+  margin-bottom: 20px;
 }
 .cta-final-bg .actions {
     margin-top: 20px;
@@ -317,8 +315,10 @@ section {
     gap: 20px;
 }
 
-.section-head h2 {
-    margin: 0;
+section#soluciones .section-head h2 {
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-dynamic));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .sub {
@@ -326,6 +326,9 @@ section {
     font-size: 16px;
     max-width: 60ch;
     line-height: 1.6;
+}
+section#soluciones .section-head .sub {
+    margin-bottom: 1.5rem;
 }
 
 .center .sub {
@@ -339,7 +342,6 @@ section {
     gap: 24px;
 }
 
-/* Estilos mejorados para las cards y los elementos interactivos */
 .card {
     padding: 24px;
     display: flex;
@@ -437,12 +439,19 @@ footer .brand .logo-white { opacity: 1; }
 footer .brand .logo-dark { opacity: 0; }
 footer .brand { color: var(--card); }
 
-/* Se aplica el cambio de color de letra solo a los elementos de texto dentro del footer */
-footer div,
-footer p.sub,
+/* Color de letra para el texto del footer */
 footer a,
-footer strong {
-    color: #A0AEC0;
+footer p.sub,
+footer .credits,
+.foot strong {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+/* Color azul para elementos específicos */
+footer .brand,
+footer .foot strong {
+    color: var(--primary-dark);
 }
 
 footer a:hover {
@@ -513,7 +522,7 @@ footer a:hover {
 .form-link {
     color: var(--primary-dark);
     font-weight: 600;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 .form-link:hover {
@@ -634,6 +643,10 @@ textarea.input {
     .main-menu.is-open {
         transform: translateX(0);
     }
+    /* Mantiene el color de los enlaces del menú blanco cuando está abierto en móvil */
+    header.scrolled .main-menu.is-open a {
+        color: white;
+    }
 
     .main-menu ul {
         flex-direction: column;
@@ -644,16 +657,4 @@ textarea.input {
     .main-menu a {
         font-size: 1.5rem;
     }
-}
-/* Texto del footer en color azul oscuro */
-footer .brand > div:last-child,
-footer .foot strong {
-    color: var(--primary-dark);
-}
-/* Texto del footer en color negro */
-footer p.sub,
-footer .foot a,
-footer .credits {
-    color: var(--ink);
-    text-decoration: none;
 }
