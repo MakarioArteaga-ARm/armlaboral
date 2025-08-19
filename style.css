@@ -645,3 +645,14 @@ textarea.input {
         font-size: 1.5rem;
     }
 }
+/* Texto del footer en color azul oscuro */
+footer .brand > div:last-child,
+footer .foot strong {
+    color: var(--primary-dark);
+}
+/* Texto del footer en color negro */
+footer p.sub,
+footer .foot a,
+footer .credits {
+    color: var(--ink);
+}
