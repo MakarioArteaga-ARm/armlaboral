@@ -423,7 +423,6 @@ section#soluciones .section-head .sub {
 /* Footer */
 footer {
     background-color: transparent;
-    color: rgba(255, 255, 255, 0.8);
     position: relative;
 }
 
@@ -435,15 +434,17 @@ footer {
     align-items: center;
 }
 
-footer .brand .logo-white { opacity: 1; }
-footer .brand .logo-dark { opacity: 0; }
-footer .brand { color: var(--card); }
+/* Muestra el logo oscuro por defecto en el footer */
+footer .brand .logo-white { opacity: 0; }
+footer .brand .logo-dark { opacity: 1; }
+footer .brand { color: var(--primary-dark); }
+
 
 /* Color de letra para el texto del footer */
 footer a,
 footer p.sub,
 footer .credits,
-.foot strong {
+footer strong {
     color: var(--ink);
     text-decoration: none;
 }
@@ -612,7 +613,12 @@ textarea.input {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    
+
+    /* Agregado para separar el texto y los botones en el hero móvil */
+    .hero .actions {
+        margin-top: 20px;
+    }
+
     .section-head {
         justify-content: center;
         text-align: center;
@@ -643,7 +649,6 @@ textarea.input {
     .main-menu.is-open {
         transform: translateX(0);
     }
-    /* Mantiene el color de los enlaces del menú blanco cuando está abierto en móvil */
     header.scrolled .main-menu.is-open a {
         color: white;
     }
