@@ -687,7 +687,7 @@ textarea.input {
     .menu-toggle {
         display: block;
     }
-
+    
     .main-menu {
         position: fixed;
         top: 0;
@@ -711,7 +711,7 @@ textarea.input {
         visibility: visible;
         pointer-events: auto;
     }
-    
+    /* Mantiene el color de los enlaces del menú blanco cuando está abierto en móvil */
     header.scrolled .main-menu.is-open a {
         color: white;
     }
@@ -727,5 +727,13 @@ textarea.input {
     }
     .main-menu a:hover {
         color: var(--celeste-vibrante);
+    }
+
+    /* Regla para suavizar el efecto de vidrio en móvil cuando se scrollea */
+    header.scrolled {
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 }
