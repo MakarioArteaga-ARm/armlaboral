@@ -168,4 +168,3 @@ document.addEventListener('DOMContentLoaded', () => {
     animated.forEach(el => el.classList.add('visible'));
   }
 });
-</script>
