@@ -1,65 +1,171 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // --- Lógica para el efecto de scroll en el encabezado ---
-  const header = document.getElementById('main-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  }
-
-  // --- Lógica para el menú móvil (hamburguesa) ---
+  // ====== SELECTORES Y CONSTANTES ======
+  const header = document.getElementById('main-header') || document.querySelector('header');
   const menuToggle = document.getElementById('menu-toggle');
   const mainMenu = document.getElementById('main-menu');
-  const menuLinks = mainMenu.querySelectorAll('a');
+  const menuLinks = mainMenu ? mainMenu.querySelectorAll('a, button') : [];
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (menuToggle && mainMenu) {
-    menuToggle.addEventListener('click', () => {
-      mainMenu.classList.toggle('is-open');
-      
-      // Cambiar ícono y aria-label
-      if (mainMenu.classList.contains('is-open')) {
-        menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-        menuToggle.setAttribute('aria-label', 'Cerrar menú');
-      } else {
-        menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-        menuToggle.setAttribute('aria-label', 'Abrir menú');
-      }
-    });
-    
-    // Cerrar el menú al hacer clic en un enlace
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mainMenu.classList.contains('is-open')) {
-                mainMenu.classList.remove('is-open');
-                menuToggle.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
-                menuToggle.setAttribute('aria-label', 'Abrir menú');
-            }
+  // Iconos (hamburguesa / cerrar)
+  const ICON_MENU =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+  const ICON_CLOSE =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+  // ====== HEADER: CLASE SCROLLED SIN JANK ======
+  if (header) {
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          header.classList.toggle('scrolled', window.scrollY > 50);
+          ticking = false;
         });
-    });
+        ticking = true;
+      }
+    };
+    // passive mejora performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // estado inicial
   }
 
-  // --- Lógica para las animaciones al hacer scroll ---
-  const animatedElements = document.querySelectorAll('.animate-on-scroll');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // Cuando el elemento es visible en la pantalla
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        // Dejar de observar el elemento una vez que la animación se ha disparado
-        observer.unobserve(entry.target);
-      }
+  // ====== LOCK SCROLL SIN “SALTO” POR SCROLLBAR ======
+  let prevScrollY = 0;
+  let prevBodyPaddingRight = '';
+  const lockScroll = () => {
+    prevScrollY = window.scrollY;
+    // compensa ancho de scrollbar para evitar salto de layout
+    const scrollBarComp = window.innerWidth - document.documentElement.clientWidth;
+    prevBodyPaddingRight = document.body.style.paddingRight;
+    if (scrollBarComp > 0) document.body.style.paddingRight = `${scrollBarComp}px`;
+    document.body.classList.add('no-scroll');
+    // Fija posición visual
+    document.body.style.top = `-${prevScrollY}px`;
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+  };
+  const unlockScroll = () => {
+    document.body.classList.remove('no-scroll');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.paddingRight = prevBodyPaddingRight || '';
+    window.scrollTo(0, prevScrollY);
+  };
+
+  // ====== MENÚ MÓVIL: TOGGLE, ARIA, ESC, FOCUS-TRAP ======
+  let lastFocused = null;
+
+  const isOpen = () => mainMenu.classList.contains('is-open');
+
+  const setInert = (on) => {
+    // Opcional: si tienes <main> aislado, puedes ponerlo inert cuando el menú abre
+    const mainEl = document.querySelector('main');
+    if (mainEl && 'inert' in mainEl) mainEl.inert = on; // soportado en navegadores modernos
+  };
+
+  const focusTrapKeydown = (e) => {
+    if (!isOpen() || e.key !== 'Tab') return;
+    const focusables = [...mainMenu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])')]
+      .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+    if (focusables.length === 0) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  };
+
+  const openMenu = () => {
+    mainMenu.classList.add('is-open');
+    header && header.classList.add('menu-open');
+    lockScroll();
+    if (menuToggle) {
+      menuToggle.innerHTML = ICON_CLOSE;
+      menuToggle.setAttribute('aria-label', 'Cerrar menú');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
+    lastFocused = document.activeElement;
+    // primer foco útil dentro del menú
+    setTimeout(() => {
+      const firstLink = mainMenu.querySelector('a, button');
+      firstLink?.focus();
+    }, 0);
+    document.addEventListener('keydown', onEscClose, true);
+    document.addEventListener('keydown', focusTrapKeydown, true);
+    setInert(true);
+  };
+
+  const closeMenu = () => {
+    mainMenu.classList.remove('is-open');
+    header && header.classList.remove('menu-open');
+    unlockScroll();
+    if (menuToggle) {
+      menuToggle.innerHTML = ICON_MENU;
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    }
+    document.removeEventListener('keydown', onEscClose, true);
+    document.removeEventListener('keydown', focusTrapKeydown, true);
+    setInert(false);
+    // regresa foco anterior si existe y sigue en el documento
+    if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
+  };
+
+  const toggleMenu = () => (isOpen() ? closeMenu() : openMenu());
+
+  const onEscClose = (e) => {
+    if (e.key === 'Escape' && isOpen()) {
+      e.preventDefault();
+      closeMenu();
+    }
+  };
+
+  if (menuToggle && mainMenu) {
+    // estado inicial accesible
+    menuToggle.setAttribute('aria-controls', 'main-menu');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+
+    // click del botón
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // cerrar al hacer click en un enlace del menú
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isOpen()) closeMenu();
+      });
     });
-  }, {
-    threshold: 0.1 // La animación se dispara cuando el 10% del elemento es visible
-  });
 
-  animatedElements.forEach(el => {
-    observer.observe(el);
-  });
+    // cerrar si clicas el fondo del overlay (fuera del UL)
+    mainMenu.addEventListener('click', (e) => {
+      if (e.target === mainMenu && isOpen()) closeMenu();
+    });
 
+    // iOS: evita “pull to refresh” detrás del overlay
+    mainMenu.addEventListener('touchmove', (e) => {
+      if (isOpen()) e.stopPropagation();
+    }, { passive: true });
+  }
+
+  // ====== ANIMACIONES EN SCROLL (IntersectionObserver) ======
+  const animated = document.querySelectorAll('.animate-on-scroll');
+  if (animated.length && !prefersReducedMotion) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.12, rootMargin: '60px 0px -20px 0px' });
+    animated.forEach(el => observer.observe(el));
+  } else {
+    // Fallback si el user prefiere menos motion
+    animated.forEach(el => el.classList.add('visible'));
+  }
 });
+</script>
