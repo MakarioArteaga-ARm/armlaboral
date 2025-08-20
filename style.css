@@ -11,6 +11,28 @@
   --ring-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
   --radius: 12px;
   --transition-speed: 0.5s;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --focus: 0 0 0 3px rgba(25, 118, 210, 0.25);
+
+  /* Z-index tokens para mejor organización */
+  --z-header: 1000;
+  --z-fab: 1800;
+  --z-menu: 2000;
+  --z-toggle: 2001;
+}
+
+/* Fallback para navegadores sin backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .hero-card, .card, .cta-band, .val, header.scrolled {
+    background: rgba(255,255,255,0.92);
+    border-color: rgba(0,0,0,0.06);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
 }
 
 /* Base y reset */
@@ -52,12 +74,12 @@ body::before {
 .container {
     max-width: 1120px;
     margin: auto;
-    padding: 0 18px;
+    padding-inline: var(--space-3);
 }
 
 h1, h2, h3, h4 {
     line-height: 1.2;
-    margin: 0 0 .5rem;
+    margin: 0 0 var(--space-1);
     font-weight: 700;
 }
 h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 800; }
@@ -70,7 +92,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: var(--z-header);
     transition: background-color var(--transition-speed) ease-in-out, box-shadow var(--transition-speed) ease-in-out;
     background-color: transparent;
 }
@@ -195,7 +217,7 @@ footer .brand .logo-dark { opacity: 1; }
     color: white;
     cursor: pointer;
     padding: 8px;
-    z-index: 1001;
+    z-index: var(--z-toggle);
     transition: color var(--transition-speed) ease-in-out;
 }
 .menu-toggle svg {
@@ -236,6 +258,7 @@ footer .brand .logo-dark { opacity: 1; }
     stroke-dasharray: 2900;
     stroke-dashoffset: 2900;
     animation: draw-curve 3s ease-in-out forwards 0.5s;
+    will-change: stroke-dashoffset;
 }
 @keyframes draw-curve {
   to {
@@ -307,6 +330,8 @@ section {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
+    content-visibility: auto; 
+    contain-intrinsic-size: 800px;
 }
 
 .cta-band {
@@ -510,6 +535,11 @@ footer a:hover {
     cursor: pointer;
     text-align: center;
 }
+a:focus-visible, .btn:focus-visible, .menu-toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus);
+  border-radius: 12px;
+}
 
 .btn.primary {
     background: var(--primary-dark);
@@ -614,7 +644,7 @@ textarea.input {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    z-index: 1000;
+    z-index: var(--z-fab);
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     text-decoration: none;
     display: flex;
@@ -641,7 +671,6 @@ textarea.input {
         gap: 30px;
     }
 
-    /* Agregado para separar el texto y los botones en el hero móvil */
     .hero .actions {
         margin-top: 20px;
         flex-direction: column;
@@ -665,7 +694,9 @@ textarea.input {
         right: 0;
         width: 100%;
         height: 100%;
-        z-index: 2000;
+        z-index: var(--z-menu);
+        visibility: hidden;
+        pointer-events: none;
         background-color: rgba(13, 71, 161, 0.95);
         backdrop-filter: blur(10px);
         display: flex;
@@ -677,8 +708,10 @@ textarea.input {
     
     .main-menu.is-open {
         transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
     }
-    /* Mantiene el color de los enlaces del menú blanco cuando está abierto en móvil */
+    
     header.scrolled .main-menu.is-open a {
         color: white;
     }
@@ -691,5 +724,8 @@ textarea.input {
     
     .main-menu a {
         font-size: 1.5rem;
+    }
+    .main-menu a:hover {
+        color: var(--celeste-vibrante);
     }
 }
