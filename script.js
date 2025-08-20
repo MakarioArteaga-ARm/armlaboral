@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let prevBodyPaddingRight = '';
   const lockScroll = () => {
     prevScrollY = window.scrollY;
-    // compensa ancho de scrollbar para evitar salto de layout
     const scrollBarComp = window.innerWidth - document.documentElement.clientWidth;
     prevBodyPaddingRight = document.body.style.paddingRight;
     if (scrollBarComp > 0) document.body.style.paddingRight = `${scrollBarComp}px`;
     document.body.classList.add('no-scroll');
-    // Fija posición visual
     document.body.style.top = `-${prevScrollY}px`;
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
@@ -59,9 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const isOpen = () => mainMenu.classList.contains('is-open');
 
   const setInert = (on) => {
-    // Opcional: si tienes <main> aislado, puedes ponerlo inert cuando el menú abre
     const mainEl = document.querySelector('main');
-    if (mainEl && 'inert' in mainEl) mainEl.inert = on; // soportado en navegadores modernos
+    if (mainEl && 'inert' in mainEl) mainEl.inert = on;
   };
 
   const focusTrapKeydown = (e) => {
@@ -88,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', 'true');
     }
     lastFocused = document.activeElement;
-    // primer foco útil dentro del menú
     setTimeout(() => {
       const firstLink = mainMenu.querySelector('a, button');
       firstLink?.focus();
@@ -111,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.removeEventListener('keydown', onEscClose, true);
     document.removeEventListener('keydown', focusTrapKeydown, true);
     setInert(false);
-    // regresa foco anterior si existe y sigue en el documento
     if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
   };
 
@@ -125,27 +120,21 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (menuToggle && mainMenu) {
-    // estado inicial accesible
     menuToggle.setAttribute('aria-controls', 'main-menu');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', 'Abrir menú');
-
-    // click del botón
     menuToggle.addEventListener('click', toggleMenu);
 
-    // cerrar al hacer click en un enlace del menú
     menuLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (isOpen()) closeMenu();
       });
     });
 
-    // cerrar si clicas el fondo del overlay (fuera del UL)
     mainMenu.addEventListener('click', (e) => {
       if (e.target === mainMenu && isOpen()) closeMenu();
     });
 
-    // iOS: evita “pull to refresh” detrás del overlay
     mainMenu.addEventListener('touchmove', (e) => {
       if (isOpen()) e.stopPropagation();
     }, { passive: true });
@@ -164,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.12, rootMargin: '60px 0px -20px 0px' });
     animated.forEach(el => observer.observe(el));
   } else {
-    // Fallback si el user prefiere menos motion
     animated.forEach(el => el.classList.add('visible'));
   }
 });
