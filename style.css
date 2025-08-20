@@ -82,6 +82,9 @@ header.scrolled .brand,
 header.scrolled .menu-toggle {
     color: var(--primary-dark);
 }
+header.scrolled .main-menu a {
+  color: var(--primary-dark);
+}
 
 .logo-container {
     position: relative;
@@ -614,11 +617,11 @@ textarea.input {
         gap: 30px;
     }
 
-    /* Agregado para separar el texto y los botones en el hero móvil */
     .hero .actions {
         margin-top: 20px;
+        flex-direction: column;
     }
-
+    
     .section-head {
         justify-content: center;
         text-align: center;
@@ -649,6 +652,7 @@ textarea.input {
     .main-menu.is-open {
         transform: translateX(0);
     }
+    /* Mantiene el color de los enlaces del menú blanco cuando está abierto en móvil */
     header.scrolled .main-menu.is-open a {
         color: white;
     }
