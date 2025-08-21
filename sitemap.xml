@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://armlaboral.com/index.html</loc>
-    </url>
-    <url>
-        <loc>https://armlaboral.com/tokens.html</loc>
-    </url>
-    <url>
-        <loc>https://armlaboral.com/nosotros.html</loc>
-    </url>
-    <url>
-        <loc>https://armlaboral.com/contacto.html</loc>
-    </url>
-    <url>
-        <loc>https://armlaboral.com/aviso-de-privacidad.html</loc>
-    </url>
+  <url>
+    <loc>https://armlaboral.com/</loc>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/soluciones.html</loc>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/nosotros.html</loc>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/contacto.html</loc>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/aviso-de-privacidad.html</loc>
+  </url>
 </urlset>
