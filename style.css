@@ -61,9 +61,8 @@ section#soluciones .section-head .sub{margin-bottom:1.5rem}
 .center .sub{max-width:80ch;margin:auto}
 .solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
 .card{padding:24px;display:flex;flex-direction:column;transition:transform 0.3s ease,box-shadow 0.3s ease}
-.card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 30px rgb(0 0 0 / .1),inset 0 2px 6px rgb(255 255 255 / .3)}
 .card .actions{margin-top:auto;padding-top:16px}
-.grid-2{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center}
+.grid-2{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:start} /* Changed align-items to start */
 .pill{display:inline-block;border:1px solid var(--primary-dark);padding:8px 16px;border-radius:999px;color:var(--primary-dark);margin:4px 6px 4px 0;background-color:var(--card);font-weight:600;transition:all 0.3s ease;font-size:14px}
 .pill:hover{background-color:var(--primary-dark);color:var(--card);transform:scale(1.05);box-shadow:var(--ring-hover)}
 .vals{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:16px}
@@ -102,7 +101,7 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
 .float-contacto:hover{transform:scale(1.1);animation-play-state:paused}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgb(37 211 102 / .7)}70%{box-shadow:0 0 0 15px #fff0}100%{box-shadow:0 0 0 0 #fff0}}
 @media (max-width:900px){.hero-inner,.grid-2,.foot,.row{grid-template-columns:1fr;gap:30px}.hero .actions{margin-top:20px;flex-direction:column}.section-head{justify-content:center;text-align:center}.section-head .btn{display:none}.menu-toggle{display:block}.main-menu{position:fixed;top:0;right:0;width:100%;height:100%;z-index:var(--z-menu);visibility:hidden;pointer-events:none;background-color:rgb(13 71 161 / .95);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;transform:translateX(100%);transition:transform 0.4s cubic-bezier(.23,1,.32,1)}.main-menu.is-open{transform:translateX(0);visibility:visible;pointer-events:auto}header.scrolled .main-menu.is-open a{color:#fff}.main-menu ul{flex-direction:column;gap:20px;text-align:center}.main-menu a{font-size:1.5rem}.main-menu a:hover{color:var(--celeste-vibrante)}header.scrolled{background:rgb(255 255 255 / .25);backdrop-filter:blur(8px);border-bottom:1px solid rgb(255 255 255 / .2);box-shadow:0 2px 8px rgb(0 0 0 / .06)}}
-@media (min-width:901px){.hero-inner{grid-template-columns:1.1fr 0.9fr}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.grid-2.reverse-grid>:first-child{order:2}.grid-2.reverse-grid>:last-child{order:1}@media (max-width:900px){.grid-2.reverse-grid>*{order:initial}}.solutions-grid{display:grid;grid-template-columns:repeat(2,minmax(240px,1fr));gap:24px;align-items:stretch;align-content:start}.section-head-left,.section-head-right{text-align:left}#nosotros .grid-2 .card{min-height:250px}.card h3{font-size:1.4rem;line-height:1.4}}
+@media (min-width:901px){.hero-inner{grid-template-columns:1.1fr 0.9fr}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.grid-2.reverse-grid>:first-child{order:2}.grid-2.reverse-grid>:last-child{order:1}@media (max-width:900px){.grid-2.reverse-grid>*{order:initial}}.solutions-grid{display:grid;grid-template-columns:repeat(2,minmax(240px,1fr));gap:24px;align-items:stretch;align-content:start}.section-head-left,.section-head-right{text-align:left}#nosotros .grid-2 .card{min-height:250px}.card h3{font-size:1.4rem;line-height:1.4}}
 
 /* ============================================= */
 /* Estilos para la nueva sección de Filosofía    */
@@ -129,21 +128,35 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
 /* ============================================= */
 /* Estilos para la sección de Testimonios (Corregido) */
 /* ============================================= */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+.testimonials-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .testimonial-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
+  padding: 24px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+}
+
+.testimonial-full {
+  display: none;
+}
+
+.testimonial-intro {
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.testimonial-author {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--primary-dark);
+  line-height: 1.4;
 }
 
 .testimonial-text {
@@ -151,33 +164,45 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
   color: var(--muted);
   border-left: 3px solid var(--primary-dynamic);
   padding-left: 20px;
-  margin: 0 0 24px 0;
+  margin: 16px 0;
 }
 
-.testimonial-author {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--primary-dark);
-  text-align: right;
-  line-height: 1.4;
+/* --- Efectos Hover (Solo en Desktop) --- */
+@media (min-width: 901px) {
+  .testimonial-full {
+    display: block; /* Aseguramos que exista en el DOM */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: scale(1.03);
+    z-index: 10;
+  }
+
+  .testimonial-card:hover .testimonial-preview {
+    display: none;
+  }
+
+  .testimonial-card:hover .testimonial-full {
+    max-height: 500px; /* Altura suficiente para el texto */
+    opacity: 1;
+  }
+
+  .testimonials-stack:hover .testimonial-card:not(:hover) {
+    filter: blur(2px) brightness(0.9);
+    transform: scale(0.98);
+  }
 }
 
-/* Efecto Hover Sutil para Testimonios */
-.testimonial-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  z-index: 10;
-}
-
-.testimonials-grid:hover .testimonial-card:not(:hover) {
-  filter: blur(2px) brightness(0.9);
-  transform: scale(0.98);
-}
-
-
-/* Hacemos que las nuevas secciones se apilen en móviles */
+/* --- Estilos para Móvil --- */
 @media (max-width: 900px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
+  .testimonial-preview {
+    display: none; /* Ocultamos el preview en móvil */
+  }
+  .testimonial-full {
+    display: block; /* Mostramos el texto completo en móvil */
   }
 }
