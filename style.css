@@ -360,12 +360,6 @@ section {
   padding: 80px 0;
   position: relative;
   overflow: hidden;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centra vertical */
-  align-items: center;     /* centra horizontal */
-  min-height: 100vh;       /* ocupa toda la pantalla */
 }
 
 .cta-band {
