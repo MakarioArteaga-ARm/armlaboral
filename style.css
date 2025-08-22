@@ -18,3 +18,64 @@
 #filosofia .title-accent {
   text-align: left;
 }
+/* ============================================= */
+/* Estilos para la nueva sección de Filosofía    */
+/* ============================================= */
+#filosofia .vals {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+#filosofia .title-accent {
+  text-align: left;
+}
+
+/* ============================================= */
+/* Estilos para la nueva sección de Equipo       */
+/* ============================================= */
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--ring-hover);
+  object-fit: cover;
+}
+
+/* ============================================= */
+/* Estilos para la nueva sección de Testimonios  */
+/* ============================================= */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  color: var(--muted);
+  border-left: 3px solid var(--primary-dynamic);
+  padding-left: 20px;
+  margin: 0 0 24px 0;
+}
+
+.testimonial-author {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-align: right;
+  line-height: 1.4;
+}
+
+/* Hacemos que las nuevas secciones se apilen en móviles */
+@media (max-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  /* La clase .reverse-grid ya se encarga de apilar la sección del equipo */
+}
