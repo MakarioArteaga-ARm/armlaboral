@@ -126,7 +126,8 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
 }
 
 /* ============================================= */
-/* Estilos para la sección de Testimonios (Corregido) */
+/* ============================================= */
+/* Estilos para la sección de Testimonios (Corregido sin parpadeo) */
 /* ============================================= */
 .testimonials-stack {
   display: flex;
@@ -142,8 +143,21 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
   overflow: hidden;
 }
 
+.testimonial-preview, 
 .testimonial-full {
-  display: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
+}
+
+.testimonial-preview {
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-full {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
 }
 
 .testimonial-intro {
@@ -169,16 +183,6 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
 
 /* --- Efectos Hover (Solo en Desktop) --- */
 @media (min-width: 901px) {
-  .testimonial-preview, .testimonial-full {
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  
-  .testimonial-full {
-    opacity: 0;
-    visibility: hidden;
-    position: absolute; /* Evita que ocupe espacio y cause el "baile" */
-  }
-
   .testimonial-card:hover {
     transform: scale(1.03);
     z-index: 10;
@@ -187,12 +191,13 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
   .testimonial-card:hover .testimonial-preview {
     opacity: 0;
     visibility: hidden;
+    height: 0;
   }
 
   .testimonial-card:hover .testimonial-full {
     opacity: 1;
     visibility: visible;
-    position: relative; /* Lo trae de vuelta al flujo para que la tarjeta se expanda */
+    height: auto;
   }
 
   .testimonials-stack:hover .testimonial-card:not(:hover) {
@@ -208,5 +213,8 @@ textarea.input{min-height:140px;resize:vertical;margin-bottom:12px}
   }
   .testimonial-full {
     display: block;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
   }
 }
