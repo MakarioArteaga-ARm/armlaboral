@@ -786,16 +786,15 @@ textarea.input {
         gap: 40px;
         align-items: start
     }
-    .grid-2.reverse-grid>:first-child {
-        order: 2
+    .reverse-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        grid-auto-flow: dense;
     }
-    .grid-2.reverse-grid>:last-child {
-        order: 1
-    }
-    @media (max-width: 900px) {
-        .grid-2.reverse-grid>* {
-            order: initial
-        }
+    .reverse-grid > div:first-child {
+        order: 2;
     }
     .solutions-grid {
         display: grid;
@@ -817,13 +816,8 @@ textarea.input {
     }
 }
 
-
 /* ============================================= */
-
-
 /* Estilos para la nueva sección de Filosofía */
-
-
 /* ============================================= */
 
 #filosofia .vals {
@@ -835,13 +829,8 @@ textarea.input {
     text-align: left;
 }
 
-
 /* ============================================= */
-
-
 /* Estilos para la nueva sección de Equipo */
-
-
 /* ============================================= */
 
 .team-image {
@@ -852,16 +841,8 @@ textarea.input {
     object-fit: cover;
 }
 
-
 /* ============================================= */
-
-
-/* ============================================= */
-
-
 /* Estilos para la sección de Testimonios (Corregido sin parpadeo) */
-
-
 /* ============================================= */
 
 .testimonials-stack {
@@ -916,7 +897,6 @@ textarea.input {
     margin: 16px 0;
 }
 
-
 /* --- Efectos Hover (Solo en Desktop) --- */
 
 @media (min-width: 901px) {
@@ -939,7 +919,6 @@ textarea.input {
         transform: scale(0.98);
     }
 }
-
 
 /* --- Estilos para Móvil --- */
 
