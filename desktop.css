@@ -1,0 +1,77 @@
+@media (min-width: 901px) {
+    .hero-inner {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        grid-template-areas: "text media";
+    }
+
+    .reverse-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+        grid-template-areas: "media text";
+    }
+
+    /* Mapeo de areas consistente para el zig-zag */
+    .grid-2 > .section-head-left,
+    .grid-2 > .section-head-right {
+        grid-area: text;
+    }
+    .grid-2 > .solutions-grid,
+    .grid-2 > .cards,
+    .grid-2 > .testimonials-stack {
+        grid-area: media;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        gap: 24px;
+        align-items: stretch;
+        align-content: start;
+    }
+
+    .section-head-left,
+    .section-head-right {
+        text-align: left;
+    }
+
+    #nosotros .grid-2 .card {
+        min-height: 250px;
+    }
+
+    .card h3 {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    /* Estilos de hover para testimonios */
+    .testimonial-card:hover {
+        transform: scale(1.03);
+        z-index: 10;
+    }
+
+    .testimonial-card:hover .testimonial-preview {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+
+    .testimonial-card:hover .testimonial-full {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+    }
+
+    .testimonials-stack:hover .testimonial-card:not(:hover) {
+        filter: blur(2px) brightness(0.9);
+        transform: scale(0.98);
+    }
+}
