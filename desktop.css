@@ -1,8 +1,21 @@
+/*
+ * Archivo: desktop.css
+ * Descripción: Estilos para pantallas de escritorio (ancho > 900px).
+ *
+ * Este archivo contiene las correcciones para los problemas de diseño en
+ * las secciones del equipo y los testimonios de la página nosotros.html.
+ *
+ * El problema del diseño "zig-zag" se resolvió con la propiedad grid-template-areas,
+ * y el efecto de las tarjetas de testimonios se restauró con las reglas de hover.
+*/
+
 @media (min-width: 901px) {
     .hero-inner {
         grid-template-columns: 1.1fr 0.9fr;
     }
 
+    /* Regla corregida para el diseño de dos columnas.
+       Se utiliza 'grid-template-areas' para definir las posiciones. */
     .grid-2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -19,13 +32,14 @@
         grid-template-areas: "media text";
     }
 
-    /* Mapeo de areas consistente para el zig-zag */
+    /* Mapeo de areas consistente para el zig-zag
+       Esto asegura que los elementos se coloquen correctamente en el grid. */
     .grid-2 > .section-head-left,
-    .grid-2 > .section-head-right {
+    .grid-2 > .section-head-right,
+    .grid-2 > div:not(.solutions-grid):not(.testimonials-stack):not(.card) {
         grid-area: text;
     }
     .grid-2 > .solutions-grid,
-    .grid-2 > .cards,
     .grid-2 > .testimonials-stack {
         grid-area: media;
     }
@@ -52,7 +66,10 @@
         line-height: 1.4;
     }
 
-    /* Estilos de hover para testimonios */
+    /*
+     * Estilos de hover para testimonios (restaurado).
+     * Esto hace que el preview se oculte y el contenido completo se muestre.
+    */
     .testimonial-card:hover {
         transform: scale(1.03);
         z-index: 10;
@@ -73,5 +90,13 @@
     .testimonials-stack:hover .testimonial-card:not(:hover) {
         filter: blur(2px) brightness(0.9);
         transform: scale(0.98);
+    }
+
+    /*
+     * Corrección para la imagen en la sección del equipo.
+     * Esto asegura que la imagen se coloque en el área correcta del grid.
+    */
+    #equipo .grid-2 > div:first-child {
+        grid-area: media;
     }
 }
