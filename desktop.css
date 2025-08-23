@@ -1,46 +1,49 @@
 /*
  * desktop.css: Estilos para pantallas de escritorio (ancho > 900px).
  *
- * Aquí se corrigen los problemas de diseño en la sección del equipo
- * y los testimonios, restaurando el efecto de zig-zag.
+ * Este archivo contiene todas las reglas de layout y efectos que solo aplican
+ * a pantallas grandes. La clave es usar `grid-template-areas` para el
+ * diseño en zig-zag y los efectos de `hover` para los testimonios.
 */
 
 @media (min-width: 901px) {
+    /* Hero Section */
     .hero-inner {
         grid-template-columns: 1.1fr 0.9fr;
     }
-
-.grid-2, .reverse-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-/* Normal: [texto][media] */
-.grid-2 { 
-    grid-template-areas: "text media";
-}
-
-/* Invertido: [media][texto] */
-.reverse-grid { 
-    grid-template-areas: "media text";
-}
-
-/* Mapeo consistente por posición */
-.grid-2 > :nth-child(1)      { grid-area: text; }
-.grid-2 > :nth-child(2)      { grid-area: media; }
-
-.reverse-grid > :nth-child(1){ grid-area: media; }
-.reverse-grid > :nth-child(2){ grid-area: text; }
     
-    /* 🔧 Fix sección Conoce al equipo */
+    /* Layouts principales */
+    .grid-2,
+    .reverse-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    /* Mapeo de áreas para el patrón zig-zag */
+    .grid-2 > :nth-child(1)      { grid-area: text; }
+    .grid-2 > :nth-child(2)      { grid-area: media; }
+    .reverse-grid > :nth-child(1){ grid-area: media; }
+    .reverse-grid > :nth-child(2){ grid-area: text; }
+
+    /* Normal: [texto][media] */
+    .grid-2.zigzag {
+        grid-template-areas: "text media";
+    }
+
+    /* Invertido: [media][texto] */
+    .reverse-grid.zigzag {
+        grid-template-areas: "media text";
+    }
+
+    /* FIX: Centrar la imagen en la sección del equipo */
     .equipo-media {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
+    
     .equipo-media img {
         max-width: 90%;   /* limita la imagen dentro de su columna */
         height: auto;
@@ -48,6 +51,7 @@
         border-radius: 12px; /* opcional */
     }
 
+    /* Grid para las tarjetas de soluciones */
     .solutions-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(240px, 1fr));
@@ -56,21 +60,29 @@
         align-content: start;
     }
 
-    .section-head-left,
-    .section-head-right {
+    /* Alineación de texto en encabezados de sección */
+    .section-head-left {
         text-align: left;
     }
+    .section-head-right {
+        text-align: left;
+        /* FIX: Asegurarse que se alinee a la izquierda dentro de su área */
+    }
+    .section-head-right .actions {
+        justify-content: flex-start;
+    }
 
+    /* Estilos de las tarjetas para la página de nosotros */
     #nosotros .grid-2 .card {
         min-height: 250px;
     }
-
+    
     .card h3 {
         font-size: 1.4rem;
         line-height: 1.4;
     }
 
-    /* Restauración de los efectos de hover de los testimonios */
+    /* FIX: Restauración de los efectos de hover de los testimonios */
     .testimonial-card:hover {
         transform: scale(1.03);
         z-index: 10;
@@ -93,4 +105,3 @@
         transform: scale(0.98);
     }
 }
-
