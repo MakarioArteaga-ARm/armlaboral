@@ -1,0 +1,87 @@
+@media (max-width: 900px) {
+    .hero-inner,
+    .grid-2,
+    .foot,
+    .row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero .actions {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .section-head {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section-head .btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: var(--z-menu);
+        visibility: hidden;
+        pointer-events: none;
+        background-color: rgb(13 71 161 / .95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(.23, 1, .32, 1);
+    }
+
+    .main-menu.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    header.scrolled .main-menu.is-open a {
+        color: #fff;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .main-menu a {
+        font-size: 1.5rem;
+    }
+
+    .main-menu a:hover {
+        color: var(--celeste-vibrante);
+    }
+
+    header.scrolled {
+        background: rgb(255 255 255 / .25);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgb(255 255 255 / .2);
+        box-shadow: 0 2px 8px rgb(0 0 0 / .06);
+    }
+
+    /* Estilos para que los testimonios no parpadeen en móvil */
+    .testimonial-preview {
+        display: none;
+    }
+    .testimonial-full {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+    }
+}
