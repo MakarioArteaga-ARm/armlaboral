@@ -18,24 +18,27 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        align-items: start;
+        align-items: center; /* FIX: Asegura que el contenido esté centrado verticalmente */
     }
     
+    /* FIX: Mapeo de áreas para el patrón zig-zag unificado */
+    .grid-2 { 
+        grid-template-areas: "text media";
+    }
+    
+    .reverse-grid {
+        grid-template-areas: "media text";
+    }
+
     /* Mapeo de áreas para el patrón zig-zag */
     .grid-2 > :nth-child(1)      { grid-area: text; }
     .grid-2 > :nth-child(2)      { grid-area: media; }
+    
+    /* FIX: Las siguientes reglas son redundantes ya que el HTML usa .reverse-grid. Las elimino para simplificar. */
+    /*
     .reverse-grid > :nth-child(1){ grid-area: media; }
     .reverse-grid > :nth-child(2){ grid-area: text; }
-
-    /* Normal: [texto][media] */
-    .grid-2.zigzag {
-        grid-template-areas: "text media";
-    }
-
-    /* Invertido: [media][texto] */
-    .reverse-grid.zigzag {
-        grid-template-areas: "media text";
-    }
+    */
 
     /* FIX: Centrar la imagen en la sección del equipo */
     .equipo-media {
@@ -66,7 +69,6 @@
     }
     .section-head-right {
         text-align: left;
-        /* FIX: Asegurarse que se alinee a la izquierda dentro de su área */
     }
     .section-head-right .actions {
         justify-content: flex-start;
