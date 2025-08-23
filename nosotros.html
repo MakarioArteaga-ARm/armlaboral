@@ -26,7 +26,6 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- FIX: Orden y uso correcto de los archivos CSS -->
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="mobile.css" media="(max-width: 900px)">
   <link rel="stylesheet" href="desktop.css" media="(min-width: 901px)">
@@ -54,7 +53,7 @@
       <div class="main-menu" id="main-menu">
         <ul>
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="soluciones.html">Soluciones</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
@@ -83,7 +82,7 @@
         </div>
       </div>
     </section>
-
+    
     <section>
       <div class="container grid-2">
         <div class="animate-on-scroll card">
@@ -120,9 +119,8 @@
         </div>
       </div>
     </section>
-
-    <!-- FIX: Se añade la clase .zigzag y .reverse-grid para usar el layout de desktop.css -->
-    <section id="equipo" class="container grid-2 zigzag reverse-grid animate-on-scroll">
+    
+    <section id="equipo" class="container grid-2 reverse-grid animate-on-scroll">
       <div class="equipo-media">
         <img src="nosotros-page-q40.webp" 
              srcset="nosotros-page-q40.webp 400w, 
@@ -156,12 +154,9 @@
       </div>
     </section>
     
-    <!-- Sección Testimonios -->
-    <!-- FIX: Se añade la clase .zigzag para usar el layout de desktop.css -->
     <section id="testimonios" class="cta-band">
-      <div class="container grid-2 zigzag animate-on-scroll">
+      <div class="container grid-2 animate-on-scroll">
         
-        <!-- Texto a la izquierda -->
         <div class="section-head-left">
           <h2 class="title-accent">La voz de nuestros clientes</h2>
           <p class="sub">
@@ -169,12 +164,9 @@
           </p>
         </div>
 
-        <!-- Tarjetas a la derecha -->
         <div class="testimonials-stack">
           
-          <!-- Testimonio 1 -->
           <article class="card testimonial-card">
-            <!-- Vista previa -->
             <div class="testimonial-preview">
               <cite class="testimonial-author">
                 <strong>BUk1 Arquitectos</strong><br>
@@ -184,7 +176,6 @@
                 “Necesitábamos contratos claros y a la medida…”
               </p>
             </div>
-            <!-- Texto completo (hover) -->
             <div class="testimonial-full">
               <blockquote class="testimonial-text">
                 “Como despacho de arquitectura, necesitábamos contratos claros y a la medida para nuestro equipo administrativo, además de una cláusula de confidencialidad que protegiera nuestro trabajo creativo. ARm Laboral nos dio documentos impecables y sobre todo tranquilidad: ahora sabemos que nuestro crecimiento está respaldado jurídicamente.”
@@ -196,9 +187,7 @@
             </div>
           </article>
 
-          <!-- Testimonio 2 -->
           <article class="card testimonial-card">
-            <!-- Vista previa -->
             <div class="testimonial-preview">
               <cite class="testimonial-author">
                 <strong>Fumigaciones y Antitermita Maldonado</strong><br>
@@ -208,7 +197,6 @@
                 “Tuve que cerrar la relación laboral con dos trabajadores…”
               </p>
             </div>
-            <!-- Texto completo (hover) -->
             <div class="testimonial-full">
               <blockquote class="testimonial-text">
                 “Tuve que cerrar la relación laboral con dos trabajadores y no quería problemas legales. ARm Laboral preparó todo el cálculo y la documentación del finiquito. Se firmó sin conflictos y, lo mejor, mis exempleados se fueron conformes. Eso me permitió seguir con mi negocio sin pendientes.”
@@ -220,9 +208,7 @@
             </div>
           </article>
 
-        </div><!-- /.testimonials-stack -->
-      </div><!-- /.container -->
-    </section>
+        </div></div></section>
     
     <section class="center cta-final-bg">
       <div class="container animate-on-scroll">
