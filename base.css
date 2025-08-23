@@ -704,3 +704,30 @@ textarea.input {
         box-shadow: 0 0 0 0 #fff0;
     }
 }
+/* 🔧 Ajuste: stack de testimonios en columna */
+.testimonials-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  flex: 1 1 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.testimonial-full {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.testimonial-preview {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
