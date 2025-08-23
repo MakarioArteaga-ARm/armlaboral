@@ -53,7 +53,7 @@
 <meta name="twitter:description" content="Asesoría y defensa laboral para empresas. Estrategia, claridad y resultados.">
 <meta name="twitter:image" content="https://armlaboral.com/og-image.jpg">
   
-<!-- Enlaces a los nuevos archivos CSS -->
+<!-- FIX: Orden y uso correcto de los archivos CSS -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" as="style" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="base.css">
@@ -136,8 +136,9 @@
     </section>
 
     <!-- Sección de Áreas de Práctica con diseño de dos columnas para escritorio -->
+    <!-- FIX: Se añade la clase .zigzag para usar el layout de desktop.css -->
     <section id="areas" aria-labelledby="areas-title">
-      <div class="container grid-2 animate-on-scroll">
+      <div class="container grid-2 zigzag animate-on-scroll">
         <div class="section-head-left">
           <h2 id="areas-title" class="title-accent">Áreas de Práctica</h2>
           <p class="sub">Nuestros expertos están listos para asesorarte y defender a tu empresa en los frentes legales más importantes.</p>
@@ -167,6 +168,7 @@
     </section>
 
     <!-- Sección de Soluciones con tarjetas, con diseño invertido de dos columnas para escritorio -->
+    <!-- FIX: Se añade la clase .zigzag y .reverse-grid para usar el layout de desktop.css -->
     <section class="cta-band" id="soluciones" aria-labelledby="soluciones-title">
       <div class="container grid-2 zigzag reverse-grid animate-on-scroll">
         <div class="section-head-right">
@@ -210,7 +212,7 @@
     </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     <div class="container foot">
       <div>
         <a href="index.html" class="brand" aria-label="Inicio ARm Laboral">
