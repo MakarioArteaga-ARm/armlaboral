@@ -1,3 +1,13 @@
+/*
+ * base.css: Estilos globales y universales para todo el sitio.
+ *
+ * Aquí van cosas que son comunes a todas las páginas y a todos los dispositivos,
+ * como la tipografía, los colores, los espaciados básicos y los estilos de
+ * componentes como botones y tarjetas.
+ *
+ * MUY IMPORTANTE: No debe haber reglas de layout como `display: flex` o `display: grid`.
+*/
+
 :root {
     --primary-dark: #0D47A1;
     --primary-dynamic: #1976D2;
@@ -265,7 +275,7 @@ footer .brand .logo-dark {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    /* La definición del layout se mueve a desktop.css */
     gap: 40px;
     align-items: center;
     text-align: left;
@@ -360,9 +370,7 @@ section {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    /* centra vertical */
+    /* FIX: Eliminar `display: flex` y `align-items: center` */
 }
 
 .cta-band {
@@ -402,6 +410,14 @@ section {
     margin-bottom: 40px;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.section-head-left {
+    text-align: left;
+}
+
+.section-head-right {
+    text-align: right;
 }
 
 section#soluciones .section-head h2 {
@@ -620,13 +636,6 @@ a:focus-visible,
     color: var(--celeste-vibrante);
 }
 
-.label {
-    font-weight: 700;
-    margin: 12px 0 6px;
-    display: block;
-    color: var(--primary-dark);
-}
-
 .input {
     width: 100%;
     padding: 12px 18px;
@@ -703,31 +712,4 @@ textarea.input {
     100% {
         box-shadow: 0 0 0 0 #fff0;
     }
-}
-/* 🔧 Ajuste: stack de testimonios en columna */
-.testimonials-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: stretch;
-}
-
-.testimonial-card {
-  flex: 1 1 auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
-}
-
-.testimonial-full {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.testimonial-preview {
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.3s ease;
 }
