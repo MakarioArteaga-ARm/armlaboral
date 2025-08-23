@@ -1,10 +1,23 @@
+/*
+ * mobile.css: Estilos para pantallas móviles (ancho <= 900px).
+ *
+ * Contiene todas las reglas de layout y ajustes de componentes que solo
+ * aplican a dispositivos móviles. Esto evita que se "filtren" estilos
+ * de escritorio a la vista móvil.
+*/
+
 @media (max-width: 900px) {
+    /* Layout: Todas las cuadrículas se convierten en una sola columna */
     .hero-inner,
     .grid-2,
-    .foot,
-    .row {
+    .foot {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .row {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .hero .actions {
@@ -21,6 +34,7 @@
         display: none;
     }
 
+    /* Menú móvil */
     .menu-toggle {
         display: block;
     }
@@ -73,8 +87,8 @@
         border-bottom: 1px solid rgb(255 255 255 / .2);
         box-shadow: 0 2px 8px rgb(0 0 0 / .06);
     }
-
-    /* Estilos para que los testimonios no parpadeen en móvil */
+    
+    /* FIX: Estilos para que los testimonios no parpadeen en móvil */
     .testimonial-preview {
         display: none;
     }
