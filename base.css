@@ -713,22 +713,44 @@ textarea.input {
         box-shadow: 0 0 0 0 #fff0;
     }
 }
-/* Bloque de redes sociales en footer */
+/* ==========================
+   Footer en grid definitivo
+   ========================== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-credits {
+  text-align: left;
+  font-size: 14px;
+  color: var(--ink);
+}
+
 .footer-social {
-  margin-top: 16px;
   text-align: right;
 }
 
 .footer-social .social-text {
   font-size: 14px;
-  color: var(--ink);   /* mismo color que el resto del texto simple en el footer */
+  color: var(--ink);
   margin-bottom: 6px;
 }
 
 .social-icons {
   display: flex;
-  justify-content: flex-end;
   gap: 12px;
+  justify-content: flex-end;
 }
 
 .social-icons img {
@@ -741,3 +763,25 @@ textarea.input {
   transform: scale(1.1);
   opacity: 0.85;
 }
+
+/* En desktop: 2 columnas × 2 filas */
+@media (min-width: 901px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+
+  .footer-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footer-right {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footer-credits {
+    grid-column: 1;
+    grid
