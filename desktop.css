@@ -97,11 +97,6 @@
     position: relative;
     display: grid;
     gap: 16px;
-    transition: backdrop-filter 0.5s ease;
-  }
-
-  .testimonials-stack:hover {
-    backdrop-filter: blur(6px);
   }
 
   .testimonial-card {
@@ -115,21 +110,15 @@
     min-height: 180px; /* altura mínima en preview */
   }
 
-  /* FIX: Posicionamiento absoluto para que no ocupe espacio y no cause brinco */
-  .testimonial-full {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 24px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+  .testimonial-preview {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.4s ease;
   }
 
-  .testimonial-preview {
-    opacity: 1;
+  .testimonial-full {
+    display: none;
+    opacity: 0;
     transition: opacity 0.4s ease;
   }
 
@@ -141,13 +130,12 @@
   }
 
   .testimonial-card:hover .testimonial-preview {
-    opacity: 0;
-    visibility: hidden;
+    display: none;
   }
 
   .testimonial-card:hover .testimonial-full {
+    display: block;
     opacity: 1;
-    visibility: visible;
   }
 
   /* Blur a las tarjetas inactivas */
@@ -156,4 +144,4 @@
     transform: scale(0.95);
     opacity: 0.8;
   }
-}
+
