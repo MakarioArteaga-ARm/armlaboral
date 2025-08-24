@@ -1,6 +1,7 @@
 /*
  * desktop.css: Estilos para pantallas de escritorio (ancho > 900px).
- * Versión robusta: grid-template-areas restaurado y testimonios corregidos.
+ * Versión final: mantiene index intacto, aplica zigzag en todas las páginas,
+ * y corrige testimonios con preview → full sin cortes ni huecos.
 */
 
 @media (min-width: 901px) {
@@ -99,25 +100,18 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    min-height: 180px; /* altura mínima en preview */
   }
 
-  .testimonial-preview,
-  .testimonial-full {
+  .testimonial-preview {
+    opacity: 1;
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
-  /* Estado normal */
-  .testimonial-preview { opacity: 1; }
   .testimonial-full {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 24px;
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    z-index: 2;
+    transition: opacity 0.4s ease;
   }
 
   /* Hover: tarjeta activa */
@@ -128,14 +122,12 @@
   }
 
   .testimonial-card:hover .testimonial-preview {
-    opacity: 0;
-    transform: scale(0.95);
+    display: none;
   }
 
   .testimonial-card:hover .testimonial-full {
+    display: block;
     opacity: 1;
-    visibility: visible;
-    transform: scale(1);
   }
 
   /* Blur a las tarjetas inactivas */
