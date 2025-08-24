@@ -10,9 +10,13 @@
     /* Layout: Todas las cuadrículas se convierten en una sola columna */
     .hero-inner,
     .grid-2,
+    .grid-2.reverse-grid,
     .foot {
         grid-template-columns: 1fr;
         gap: 30px;
+        grid-template-areas: 
+            "text"
+            "media"; /* ✅ siempre texto primero, tarjetas después */
     }
     
     .row {
