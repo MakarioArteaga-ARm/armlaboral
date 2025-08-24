@@ -1,138 +1,140 @@
 /*
  * desktop.css: Estilos para pantallas de escritorio (ancho > 900px).
- *
- * Este archivo contiene todas las reglas de layout y efectos que solo aplican
- * a pantallas grandes. La clave es usar `grid-template-areas` para el
- * diseño en zig-zag y los efectos de `hover` para los testimonios.
+ * Mantiene el layout original con grid-template-areas para que index.html
+ * funcione perfecto, y añade el efecto hover + blur en testimonios.
 */
 
 @media (min-width: 901px) {
-    /* Hero Section */
-    .hero-inner {
-        grid-template-columns: 1.1fr 0.9fr;
-    }
-    
-    /* Layouts principales */
-    /* FIX: Unificamos el layout principal bajo una clase y usamos zigzag para los diferentes patrones */
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-    }
 
-    /* Mapeo de áreas para el patrón zig-zag */
-    .grid-2.zigzag > :nth-child(1) { grid-area: text; }
-    .grid-2.zigzag > :nth-child(2) { grid-area: media; }
-    
-    .grid-2.zigzag.reverse-grid > :nth-child(1) { grid-area: media; }
-    .grid-2.zigzag.reverse-grid > :nth-child(2) { grid-area: text; }
+  /* Hero Section */
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
 
-    /* FIX: Centrar la imagen en la sección del equipo */
-    .equipo-media {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .equipo-media img {
-        max-width: 90%;   /* limita la imagen dentro de su columna */
-        height: auto;
-        object-fit: cover;
-        border-radius: 12px; /* opcional */
-    }
+  /* =========================
+     GRID BASE PARA SECCIONES
+  ========================== */
+  .grid-2 {
+    display: grid;
+    grid-template-areas: "text media";
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
 
-    /* Grid para las tarjetas de soluciones */
-    .solutions-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(240px, 1fr));
-        gap: 24px;
-        align-items: stretch;
-        align-content: start;
-    }
+  /* Inversión del patrón (zigzag) */
+  .grid-2.reverse-grid {
+    grid-template-areas: "media text";
+  }
 
-    /* Alineación de texto en encabezados de sección */
-    .section-head-left {
-        text-align: left;
-    }
-    .section-head-right {
-        text-align: left;
-    }
-    .section-head-right .actions {
-        justify-content: flex-start;
-    }
+  /* Mapeo explícito de hijos */
+  .grid-2 > :nth-child(1) { grid-area: text; }
+  .grid-2 > :nth-child(2) { grid-area: media; }
 
-    /* Estilos de las tarjetas para la página de nosotros */
-    #nosotros .grid-2 .card {
-        min-height: 250px;
-    }
-    
-    .card h3 {
-        font-size: 1.4rem;
-        line-height: 1.4;
-    }
+  /* =========================
+     EQUIPO (imagen centrada)
+  ========================== */
+  .equipo-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    /* Nuevo CSS para los testimonios con hover y blur elegante */
-    .testimonials-stack {
-        position: relative;
-        display: grid;
-        gap: 16px;
-        /* backdrop-filter se aplicará aquí en hover, no en el elemento principal */
-        transition: backdrop-filter 0.5s ease;
-    }
+  .equipo-media img {
+    max-width: 90%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 
-    .testimonials-stack:hover {
-        backdrop-filter: blur(6px); /* El efecto de blur en el fondo se activa al pasar el mouse por el contenedor */
-    }
+  /* =========================
+     SOLUCIONES (tarjetas)
+  ========================== */
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+  }
 
-    .testimonial-card {
-        position: relative;
-        z-index: 1; /* Por defecto, todas las tarjetas están en z-index 1 */
-        transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
-    }
+  /* =========================
+     TEXTOS
+  ========================== */
+  .section-head-left {
+    text-align: left;
+  }
 
-    /* Reglas para la tarjeta activa (en hover) */
-    .testimonial-card:hover {
-        transform: scale(1.05); /* Expansión ligera */
-        z-index: 10; /* La tarjeta activa se pone al frente */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Reglas para las tarjetas inactivas (cuando otra está en hover) */
-    .testimonials-stack:hover .testimonial-card:not(:hover) {
-        filter: blur(2px) brightness(0.9);
-        transform: scale(0.95);
-        opacity: 0.8;
-    }
+  .section-head-right {
+    text-align: left;
+  }
 
-    /* Comportamiento del contenido de la tarjeta */
-    .testimonial-preview,
-    .testimonial-full {
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        backface-visibility: hidden;
-    }
+  .section-head-right .actions {
+    justify-content: flex-start;
+  }
 
-    .testimonial-full {
-        position: absolute; /* Para que no ocupen espacio antes del hover */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 24px;
-        opacity: 0;
-        visibility: hidden;
-        z-index: -1;
-    }
-    
-    .testimonial-card:hover .testimonial-preview {
-        opacity: 0;
-        transform: scale(0.9);
-    }
+  /* =========================
+     TARJETAS GENÉRICAS
+  ========================== */
+  .card h3 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
 
-    .testimonial-card:hover .testimonial-full {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-        z-index: 2; /* Asegura que el contenido completo esté visible */
-    }
+  /* =========================
+     TESTIMONIOS
+  ========================== */
+  .testimonials-stack {
+    position: relative;
+    display: grid;
+    gap: 16px;
+  }
+
+  .testimonial-card {
+    position: relative;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+
+  .testimonial-preview,
+  .testimonial-full {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* Estado normal: solo preview visible */
+  .testimonial-full {
+    display: none;
+  }
+
+  /* Hover: tarjeta activa se expande */
+  .testimonial-card:hover {
+    transform: scale(1.05);
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  /* Hover: se oculta preview, aparece full */
+  .testimonial-card:hover .testimonial-preview {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .testimonial-card:hover .testimonial-full {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Efecto sobre el stack completo */
+  .testimonials-stack:hover .testimonial-card:not(:hover) {
+    filter: blur(2px) brightness(0.9);
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
 }
