@@ -144,4 +144,8 @@
     transform: scale(0.95);
     opacity: 0.8;
   }
-
+@media (min-width: 901px) {
+  .footer-social {
+    margin-top: 20px;
+  }
+}
