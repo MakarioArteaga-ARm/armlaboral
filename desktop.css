@@ -1,7 +1,7 @@
 /*
  * desktop.css: Estilos para pantallas de escritorio (ancho > 900px).
- * Versión final: mantiene index intacto, aplica zigzag en todas las páginas,
- * y corrige testimonios con preview → full sin cortes ni huecos.
+ * Versión blindada: mantiene index intacto, zigzag en todas las páginas,
+ * y testimonios corregidos (preview → full sin cortes ni huecos).
 */
 
 @media (min-width: 901px) {
@@ -18,13 +18,18 @@
 
   /* =========================
      GRID BASE PARA SECCIONES
+     (con reset contra mobile.css)
   ========================== */
-  .grid-2 {
-    display: grid;
-    grid-template-areas: "text media";
-    grid-template-columns: 1fr 1fr;
+  .grid-2,
+  .grid-2.reverse-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 40px;
     align-items: center;
+  }
+
+  .grid-2 {
+    grid-template-areas: "text media";
   }
 
   .grid-2.reverse-grid {
