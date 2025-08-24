@@ -144,15 +144,16 @@
     transform: scale(0.95);
     opacity: 0.8;
   }
-
+  
   /* =========================
      FOOTER GRID DEFINITIVO
   ========================== */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;   /* primera fila auto, segunda ocupa espacio */
     gap: 20px;
+    align-items: start;
   }
 
   .footer-left {
@@ -172,7 +173,7 @@
   .footer-credits {
     grid-column: 1;
     grid-row: 2;
-    align-self: end;
+    align-self: end;   /* 👈 baja créditos */
     text-align: left;
     font-size: 14px;
     color: var(--ink);
@@ -181,7 +182,7 @@
   .footer-social {
     grid-column: 2;
     grid-row: 2;
-    align-self: end;  /* 👈 baja redes al mismo nivel que © */
+    align-self: end;   /* 👈 baja redes al mismo nivel que créditos */
     text-align: right;
   }
 
