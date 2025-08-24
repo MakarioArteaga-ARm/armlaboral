@@ -713,12 +713,22 @@ textarea.input {
         box-shadow: 0 0 0 0 #fff0;
     }
 }
-/* Redes sociales en footer */
+/* Bloque de redes sociales en footer */
+.footer-social {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.footer-social .social-text {
+  font-size: 14px;
+  color: var(--ink);   /* mismo color que el resto del texto simple en el footer */
+  margin-bottom: 6px;
+}
+
 .social-icons {
-  margin-top: 12px;
   display: flex;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 12px;
 }
 
 .social-icons img {
@@ -728,6 +738,6 @@ textarea.input {
 }
 
 .social-icons a:hover img {
-  transform: scale(1.15);
+  transform: scale(1.1);
   opacity: 0.85;
 }
