@@ -13,32 +13,20 @@
     }
     
     /* Layouts principales */
-    .grid-2,
-    .reverse-grid {
+    /* FIX: Unificamos el layout principal bajo una clase y usamos zigzag para los diferentes patrones */
+    .grid-2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        align-items: center; /* FIX: Asegura que el contenido esté centrado verticalmente */
-    }
-    
-    /* FIX: Mapeo de áreas para el patrón zig-zag unificado */
-    .grid-2 { 
-        grid-template-areas: "text media";
-    }
-    
-    .reverse-grid {
-        grid-template-areas: "media text";
+        align-items: center;
     }
 
     /* Mapeo de áreas para el patrón zig-zag */
-    .grid-2 > :nth-child(1)      { grid-area: text; }
-    .grid-2 > :nth-child(2)      { grid-area: media; }
+    .grid-2.zigzag > :nth-child(1) { grid-area: text; }
+    .grid-2.zigzag > :nth-child(2) { grid-area: media; }
     
-    /* FIX: Las siguientes reglas son redundantes ya que el HTML usa .reverse-grid. Las elimino para simplificar. */
-    /*
-    .reverse-grid > :nth-child(1){ grid-area: media; }
-    .reverse-grid > :nth-child(2){ grid-area: text; }
-    */
+    .grid-2.zigzag.reverse-grid > :nth-child(1) { grid-area: media; }
+    .grid-2.zigzag.reverse-grid > :nth-child(2) { grid-area: text; }
 
     /* FIX: Centrar la imagen en la sección del equipo */
     .equipo-media {
@@ -84,26 +72,67 @@
         line-height: 1.4;
     }
 
-    /* FIX: Restauración de los efectos de hover de los testimonios */
-    .testimonial-card:hover {
-        transform: scale(1.03);
-        z-index: 10;
+    /* Nuevo CSS para los testimonios con hover y blur elegante */
+    .testimonials-stack {
+        position: relative;
+        display: grid;
+        gap: 16px;
+        /* backdrop-filter se aplicará aquí en hover, no en el elemento principal */
+        transition: backdrop-filter 0.5s ease;
     }
 
-    .testimonial-card:hover .testimonial-preview {
+    .testimonials-stack:hover {
+        backdrop-filter: blur(6px); /* El efecto de blur en el fondo se activa al pasar el mouse por el contenedor */
+    }
+
+    .testimonial-card {
+        position: relative;
+        z-index: 1; /* Por defecto, todas las tarjetas están en z-index 1 */
+        transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
+    }
+
+    /* Reglas para la tarjeta activa (en hover) */
+    .testimonial-card:hover {
+        transform: scale(1.05); /* Expansión ligera */
+        z-index: 10; /* La tarjeta activa se pone al frente */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Reglas para las tarjetas inactivas (cuando otra está en hover) */
+    .testimonials-stack:hover .testimonial-card:not(:hover) {
+        filter: blur(2px) brightness(0.9);
+        transform: scale(0.95);
+        opacity: 0.8;
+    }
+
+    /* Comportamiento del contenido de la tarjeta */
+    .testimonial-preview,
+    .testimonial-full {
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        backface-visibility: hidden;
+    }
+
+    .testimonial-full {
+        position: absolute; /* Para que no ocupen espacio antes del hover */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 24px;
         opacity: 0;
         visibility: hidden;
-        height: 0;
+        z-index: -1;
+    }
+    
+    .testimonial-card:hover .testimonial-preview {
+        opacity: 0;
+        transform: scale(0.9);
     }
 
     .testimonial-card:hover .testimonial-full {
         opacity: 1;
         visibility: visible;
-        height: auto;
-    }
-
-    .testimonials-stack:hover .testimonial-card:not(:hover) {
-        filter: blur(2px) brightness(0.9);
-        transform: scale(0.98);
+        transform: scale(1);
+        z-index: 2; /* Asegura que el contenido completo esté visible */
     }
 }
