@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://armlaboral.com/</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
+      <image:title>Logo ARm Laboral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/logo-header-dark-80.webp</image:loc>
+      <image:title>Logo ARm Laboral (versión oscura)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/facebook_80.webp</image:loc>
+      <image:title>Facebook ARm Laboral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/instagram_80.webp</image:loc>
+      <image:title>Instagram ARm Laboral</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/og-image.jpg</image:loc>
+      <image:title>ARm Laboral — Asesoría y Defensa Legal</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página Nosotros -->
+  <url>
+    <loc>https://armlaboral.com/nosotros.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/nosotros-page-q80.webp</image:loc>
+      <image:title>Equipo ARm Laboral</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página Soluciones -->
+  <url>
+    <loc>https://armlaboral.com/soluciones.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
+      <image:title>Logo ARm Laboral</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página Contacto -->
+  <url>
+    <loc>https://armlaboral.com/contacto.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
+      <image:title>Logo ARm Laboral</image:title>
+    </image:image>
+  </url>
+
+  <!-- Página Aviso de privacidad -->
+  <url>
+    <loc>https://armlaboral.com/aviso-de-privacidad.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
+      <image:title>Logo ARm Laboral</image:title>
+    </image:image>
+  </url>
+
+</urlset>
