@@ -749,17 +749,22 @@ textarea.input {
 
 .fab-badge {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: -4px;       /* lo sube para que quede fuera del círculo verde */
+  right: -4px;     /* lo empuja a la orilla */
   background: red;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   border-radius: 50%;
-  padding: 4px 8px;
+  width: 20px;     /* 🔥 círculo perfecto */
+  height: 20px;    /* 🔥 círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   animation: show-badge 0.6s ease forwards;
   animation-delay: 2s;
+  box-shadow: 0 0 0 2px #fff; /* 🔥 borde blanco como en Adcordis */
 }
 @keyframes show-badge {
   to { opacity: 1; }
