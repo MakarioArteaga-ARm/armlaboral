@@ -3,3 +3,16 @@ let prevScrollY=0;let prevBodyPaddingRight='';const lockScroll=()=>{prevScrollY=
 lastFocused=document.activeElement;setTimeout(()=>{const firstLink=mainMenu.querySelector('a, button');firstLink?.focus()},0);document.addEventListener('keydown',onEscClose,!0);document.addEventListener('keydown',focusTrapKeydown,!0);setInert(!0)};const closeMenu=()=>{mainMenu.classList.remove('is-open');header&&header.classList.remove('menu-open');unlockScroll();if(menuToggle){menuToggle.innerHTML=ICON_MENU;menuToggle.setAttribute('aria-label','Abrir menú');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus()}
 document.removeEventListener('keydown',onEscClose,!0);document.removeEventListener('keydown',focusTrapKeydown,!0);setInert(!1);if(lastFocused&&document.contains(lastFocused))lastFocused.focus();};const toggleMenu=()=>(isOpen()?closeMenu():openMenu());const onEscClose=(e)=>{if(e.key==='Escape'&&isOpen()){e.preventDefault();closeMenu()}};if(menuToggle&&mainMenu){menuToggle.setAttribute('aria-controls','main-menu');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Abrir menú');menuToggle.addEventListener('click',toggleMenu);menuLinks.forEach(link=>{link.addEventListener('click',()=>{if(isOpen())closeMenu();})});mainMenu.addEventListener('click',(e)=>{if(e.target===mainMenu&&isOpen())closeMenu();});mainMenu.addEventListener('touchmove',(e)=>{if(isOpen())e.stopPropagation();},{passive:!0})}
 const animated=document.querySelectorAll('.animate-on-scroll');if(animated.length&&!prefersReducedMotion){const observer=new IntersectionObserver((entries,obs)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target)}}},{threshold:0.12,rootMargin:'60px 0px -20px 0px'});animated.forEach(el=>observer.observe(el))}else{animated.forEach(el=>el.classList.add('visible'))}})
+// =============================
+// WhatsApp FAB + Popup
+// =============================
+document.addEventListener('DOMContentLoaded', ()=>{
+  const fab = document.getElementById('whatsapp-fab');
+  const popup = document.getElementById('whatsapp-popup');
+  const closeBtn = document.getElementById('close-popup');
+
+  if(fab && popup && closeBtn){
+    fab.addEventListener('click', ()=> popup.style.display = 'block');
+    closeBtn.addEventListener('click', ()=> popup.style.display = 'none');
+  }
+});
