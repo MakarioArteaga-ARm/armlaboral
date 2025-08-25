@@ -1,36 +1,42 @@
+
 /*
  * mobile.css: Estilos para pantallas móviles (ancho <= 900px).
  *
- * Contiene todas las reglas de layout y ajustes de componentes que solo
- * aplican a dispositivos móviles. Esto evita que se "filtren" estilos
- * de escritorio a la vista móvil.
+ * Versión simplificada: puro scroll vertical, sin grids, con ajuste de imágenes y fade-up al hacer scroll.
 */
 
 @media (max-width: 900px) {
-    /* Layout: Todas las cuadrículas se convierten en una sola columna */
+    /* 👉 Forzar todo a ser apilado */
+    section,
     .hero-inner,
     .grid-2,
     .grid-2.reverse-grid,
-    .foot {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        grid-template-areas: 
-            "text"
-            "media"; /* ✅ siempre texto primero, tarjetas después */
-    }
-    
-    .row {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    .foot,
+    .row,
+    .solutions-grid {
+        display: block !important;
     }
 
+    /* 👉 Ajustes de tarjetas */
+    .card {
+        margin-bottom: 24px;
+        width: 100% !important;
+    }
+
+    /* 👉 Ajustes de imágenes */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 👉 Hero actions en columna */
     .hero .actions {
         margin-top: 20px;
-        flex-direction: column;
+        display: block;
     }
 
+    /* 👉 Encabezados centrados */
     .section-head {
-        justify-content: center;
         text-align: center;
     }
 
@@ -38,7 +44,7 @@
         display: none;
     }
 
-    /* Menú móvil */
+    /* 👉 Menú móvil */
     .menu-toggle {
         display: block;
     }
@@ -91,8 +97,8 @@
         border-bottom: 1px solid rgb(255 255 255 / .2);
         box-shadow: 0 2px 8px rgb(0 0 0 / .06);
     }
-    
-    /* FIX: Estilos para que los testimonios no parpadeen en móvil */
+
+    /* 👉 Testimonios simplificados */
     .testimonial-preview {
         display: none;
     }
