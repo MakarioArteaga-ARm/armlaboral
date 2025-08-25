@@ -209,3 +209,26 @@
     opacity: 0.85;
   }
 }
+/* =========================
+   VALORES (Nosotros)
+========================= */
+.val {
+  margin-bottom: 20px; /* espacio entre valores */
+}
+
+.val strong {
+  background: linear-gradient(90deg, #0E4D92, #196F5A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;   /* fuerza a que sea un título en su propia línea */
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px; /* espacio con el texto descriptivo */
+}
+
+.val .sub {
+  display: block;
+  font-size: 1rem;
+  color: #333; /* gris oscuro, legible */
+  line-height: 1.5;
+}
