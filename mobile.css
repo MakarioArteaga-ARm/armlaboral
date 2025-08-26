@@ -1,12 +1,50 @@
-
 /*
  * mobile.css: Estilos para pantallas móviles (ancho <= 900px).
  *
- * Versión simplificada: puro scroll vertical, sin grids, con ajuste de imágenes y fade-up al hacer scroll.
+ * Versión refinada: Mejora el espaciado, la jerarquía visual y la legibilidad
+ * en dispositivos móviles sin afectar el diseño de escritorio.
 */
 
 @media (max-width: 900px) {
-    /* 👉 Forzar todo a ser apilado */
+
+    /* --- AJUSTES GENERALES DE ESPACIADO Y RITMO --- */
+    section {
+        /* Reduce el padding vertical para evitar scroll excesivo */
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .container {
+        /* Aumenta el padding lateral para que el contenido no toque los bordes */
+        padding-inline: 1.25rem; /* ~20px */
+    }
+
+    /* --- AJUSTES EN SECCIÓN HERO --- */
+    .hero {
+        /* Ajusta el padding para que no sea tan alto en móviles */
+        padding: 120px 0 80px;
+    }
+
+    .hero-inner {
+        text-align: center; /* Centra todo el texto para mayor impacto */
+    }
+
+    .hero .actions {
+        margin-top: 30px;
+        display: flex;          /* Usa flexbox para mejor control */
+        flex-direction: column; /* Apila los botones */
+        align-items: center;    /* Centra los botones en el contenedor */
+        gap: 15px;              /* Espacio consistente entre botones */
+    }
+
+    .hero .actions .btn {
+        width: 100%;          /* Ocupan casi todo el ancho disponible */
+        max-width: 320px;     /* Límite para que no se vean gigantes */
+    }
+
+
+    /* --- ESTRUCTURA Y LAYOUT --- */
+    /* Forzar todo a ser apilado verticalmente (tu regla original) */
     section,
     .hero-inner,
     .grid-2,
@@ -17,34 +55,62 @@
         display: block !important;
     }
 
-    /* 👉 Ajustes de tarjetas */
+    /* Ajustes de tarjetas (tu regla original) */
     .card {
         margin-bottom: 24px;
         width: 100% !important;
     }
 
-    /* 👉 Ajustes de imágenes */
+    /* Ajustes de imágenes (tu regla original) */
     img {
         max-width: 100% !important;
         height: auto !important;
     }
 
-    /* 👉 Hero actions en columna */
-    .hero .actions {
-        margin-top: 20px;
-        display: block;
-    }
-
-    /* 👉 Encabezados centrados */
+    /* Encabezados de sección centrados (tu regla original) */
     .section-head {
         text-align: center;
     }
 
     .section-head .btn {
-        display: none;
+        display: none; /* Oculta botones secundarios en encabezados */
     }
 
-    /* 👉 Menú móvil */
+
+    /* --- FORMULARIO DE CONTACTO --- */
+    .form .row {
+        margin-bottom: 0; /* Resetea el margen del contenedor .row */
+    }
+
+    .form .row > div {
+        margin-bottom: 16px; /* Añade espacio debajo de cada campo cuando se apilan */
+    }
+
+    .form .actions {
+        justify-content: center; /* Centra el botón de enviar */
+    }
+
+
+    /* --- FOOTER (PIE DE PÁGINA) --- */
+    .foot {
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .footer-left .brand,
+    .social-icons {
+        justify-content: center; /* Centra el logo y los iconos sociales */
+    }
+
+    .footer-right,
+    .footer-social,
+    .footer-credits {
+        text-align: center; /* Centra el resto del contenido */
+        margin-top: 30px;   /* Espacio entre los bloques del footer */
+    }
+
+
+    /* --- MENÚ MÓVIL (Tus reglas originales, sin cambios) --- */
     .menu-toggle {
         display: block;
     }
@@ -98,7 +164,8 @@
         box-shadow: 0 2px 8px rgb(0 0 0 / .06);
     }
 
-    /* 👉 Testimonios simplificados */
+
+    /* --- TESTIMONIOS (Tus reglas originales, sin cambios) --- */
     .testimonial-preview {
         display: none;
     }
