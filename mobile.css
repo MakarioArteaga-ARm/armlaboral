@@ -3,7 +3,8 @@
  *
  * Contiene todas las reglas de layout y ajustes de componentes que solo
  * aplican a dispositivos móviles. Esto evita que se "filtren" estilos
- * de escritorio a la vista móvil.
+ * de
+ * escritorio a la vista móvil.
 */
 
 @media (max-width: 900px) {
@@ -17,6 +18,7 @@
     
     .grid-2, .reverse-grid {
         display: grid; /* Se mantiene display: grid para la coherencia */
+        align-items: flex-start; /* FIX: Asegura que los elementos se apilen verticalmente */
     }
 
     .row {
@@ -103,4 +105,3 @@
         height: auto;
     }
 }
-
