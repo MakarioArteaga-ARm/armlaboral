@@ -85,11 +85,13 @@
         padding: 40px 0;
     }
 
-    .footer-left .brand,
-    .social-icons {
-        justify-content: center;
-    }
-
+.footer-left .brand,
+.social-icons {
+    display: flex; /* <-- La instrucción que faltaba */
+    justify-content: center;
+    gap: 16px; /* <-- Un poco de espacio entre los íconos */
+}
+    
     .footer-right,
     .footer-social,
     .footer-credits {
