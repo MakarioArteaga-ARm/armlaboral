@@ -9,13 +9,14 @@
 @media (max-width: 900px) {
     /* FIX: Las cuadrículas se convierten en una sola columna apilada */
     .hero-inner,
-    .foot {
+    .foot,
+    .grid-2 { /* Se incluye .grid-2 para usar un solo estilo de columna */
         grid-template-columns: 1fr;
         gap: 30px;
     }
     
-    .grid-2 {
-        display: block; /* Cambia a display: block para apilar elementos */
+    .grid-2, .reverse-grid {
+        display: grid; /* Se mantiene display: grid para la coherencia */
     }
 
     .row {
@@ -102,3 +103,4 @@
         height: auto;
     }
 }
+
