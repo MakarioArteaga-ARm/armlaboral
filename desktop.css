@@ -1,10 +1,36 @@
 /*
  * desktop.css: Estilos para pantallas de escritorio (ancho > 900px).
- * Versión blindada: mantiene index intacto, zigzag en todas las páginas,
- * y testimonios corregidos (preview → full sin cortes ni huecos).
+ * Versión refactorizada con sistema de grid universal y robusto.
 */
 
 @media (min-width: 901px) {
+
+  /* ===================================
+     SISTEMA DE GRID UNIVERSAL (ZIG-ZAG)
+     =================================== */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    /* Blueprint por defecto: Texto a la izquierda, Media a la derecha */
+    grid-template-areas: "text media";
+  }
+
+  /* Asigna cada bloque a su área correspondiente */
+  .grid-text {
+    grid-area: text;
+  }
+
+  .grid-media {
+    grid-area: media;
+  }
+
+  /* La magia: Si el contenedor tiene esta clase, invierte el blueprint */
+  .grid-2.reverse-on-desktop {
+    grid-template-areas: "media text";
+  }
+
 
   /* =========================
      HERO
@@ -16,34 +42,19 @@
     align-items: center;
   }
 
-  /* =========================
-     GRID BASE PARA SECCIONES
-     (con reset contra mobile.css)
-  ========================== */
-  .grid-2,
-  .grid-2.reverse-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 40px;
-    align-items: center;
-  }
-
-  /* FIX: Mapeo de áreas basado en clases, no en el orden del HTML */
-  .grid-2 {
-    grid-template-areas: "text media";
-  }
-
-  .grid-2.reverse-grid {
-    grid-template-areas: "media text";
-  }
-
-  .grid-2 > .solutions-grid { grid-area: media; }
-  .grid-2 > div[class^="section-head-"] { grid-area: text; }
-
 
   /* =========================
-     EQUIPO (imagen centrada)
+     ESTILOS COMPLEMENTARIOS
   ========================== */
+  .section-head-left,
+  .section-head-right {
+    text-align: left; /* Asegura alineación a la izquierda dentro del grid */
+  }
+
+  .section-head-right .actions {
+    justify-content: flex-start;
+  }
+
   .equipo-media {
     display: flex;
     justify-content: center;
@@ -57,9 +68,6 @@
     border-radius: 12px;
   }
 
-  /* =========================
-     SOLUCIONES (tarjetas)
-  ========================== */
   .solutions-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(240px, 1fr));
@@ -67,28 +75,11 @@
     align-items: stretch;
   }
 
-  /* =========================
-     TEXTOS
-  ========================== */
-  .section-head-left {
-    text-align: left;
-  }
-
-  .section-head-right {
-    text-align: left;
-  }
-
-  .section-head-right .actions {
-    justify-content: flex-start;
-  }
-
-  /* =========================
-     TARJETAS GENÉRICAS
-  ========================== */
   .card h3 {
     font-size: 1.4rem;
     line-height: 1.4;
   }
+
 
   /* =========================
      TESTIMONIOS
@@ -107,7 +98,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s;
     overflow: hidden;
-    min-height: 180px; /* altura mínima en preview */
+    min-height: 180px;
   }
 
   .testimonial-preview {
@@ -122,7 +113,6 @@
     transition: opacity 0.4s ease;
   }
 
-  /* Hover: tarjeta activa */
   .testimonial-card:hover {
     transform: scale(1.05);
     z-index: 10;
@@ -138,7 +128,6 @@
     opacity: 1;
   }
 
-  /* Blur a las tarjetas inactivas */
   .testimonials-stack:hover .testimonial-card:not(:hover) {
     filter: blur(2px) brightness(0.9);
     transform: scale(0.95);
@@ -146,12 +135,12 @@
   }
   
   /* =========================
-     FOOTER GRID DEFINITIVO
+     FOOTER GRID
   ========================== */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;   /* primera fila auto, segunda ocupa espacio */
+    grid-template-rows: auto 1fr;
     gap: 20px;
     align-items: start;
   }
@@ -159,37 +148,27 @@
   .footer-left {
     grid-column: 1;
     grid-row: 1;
-    align-self: start;
     text-align: left;
   }
 
   .footer-right {
     grid-column: 2;
     grid-row: 1;
-    align-self: start;
     text-align: right;
   }
 
   .footer-credits {
     grid-column: 1;
     grid-row: 2;
-    align-self: end;   /* 👈 baja créditos */
+    align-self: end;
     text-align: left;
-    font-size: 14px;
-    color: var(--ink);
   }
 
   .footer-social {
     grid-column: 2;
     grid-row: 2;
-    align-self: end;   /* 👈 baja redes al mismo nivel que créditos */
+    align-self: end;
     text-align: right;
-  }
-
-  .footer-social .social-text {
-    font-size: 14px;
-    color: var(--ink);
-    margin-bottom: 6px;
   }
 
   .social-icons {
@@ -208,35 +187,4 @@
     transform: scale(1.1);
     opacity: 0.85;
   }
-}
-/* =========================
-   VALORES (Nosotros)
-========================= */
-.vals {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.val.card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.val-title {
-  background: linear-gradient(90deg, #0E4D92, #196F5A);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.val-desc {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
 }
