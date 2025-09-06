@@ -80,6 +80,14 @@
     line-height: 1.4;
   }
 
+  /* ✅ INICIA LA CORRECCIÓN PARA LAS TARJETAS DE VALORES */
+  .vals {
+    /* Esta línea asegura que todas las filas tengan la altura
+       suficiente para el contenido más alto. */
+    align-items: stretch;
+  }
+  /* ✅ TERMINA LA CORRECCIÓN */
+
 
   /* =========================
      TESTIMONIOS
