@@ -734,18 +734,6 @@ textarea.input {
 .faq-cta-final {
     text-align: center;
     padding: 60px 0;
-    border-top: 1px solid #e9ecef;
-}
-
-.faq-intro {
-    border-bottom: 1px solid #e9ecef;
-}
-
-.faq-intro .container p {
-    max-width: 70ch;
-    font-size: 1.2rem;
-    margin: auto;
-    color: var(--muted);
 }
 
 .faq-content {
