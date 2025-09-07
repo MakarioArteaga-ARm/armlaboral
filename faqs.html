@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
   </noscript>
   
-  <!-- Estilos con la versión correcta que incluye TODOS los estilos -->
+  <!-- Estilos con la versión que contiene los estilos del acordeón -->
   <link rel="stylesheet" href="base.css?v=1.0.3">
   <link rel="stylesheet" href="mobile.css?v=1.0.3" media="(max-width: 900px)">
   <link rel="stylesheet" href="desktop.css?v=1.0.3" media="(min-width: 901px)">
@@ -90,104 +90,109 @@
       </div>
     </section>
     
-    <section class="faq-intro">
+    <section>
         <div class="container">
-            <p>¡Bienvenido a nuestro centro de información! En ARm Laboral, creemos en la comunicación directa y eficiente. Aquí hemos recopilado las preguntas más habituales sobre nuestro modelo de servicio, procesos y cómo podemos blindar legalmente a tu empresa. Si no encuentras lo que buscas, estamos a un clic de distancia.</p>
+            <div class="card animate-on-scroll">
+                <div class="faq-intro" style="padding: 1.5rem 1.5rem 0 1.5rem; border: none; text-align: left;">
+                    <p style="font-size: 1.1rem; color: var(--muted); max-width: 80ch;">¡Bienvenido a nuestro centro de información! En ARm Laboral, creemos en la comunicación directa y eficiente. Aquí hemos recopilado las preguntas más habituales sobre nuestro modelo de servicio, procesos y cómo podemos blindar legalmente a tu empresa.</p>
+                </div>
+
+                <div class="faq-content" style="padding: 40px 1.5rem 1.5rem 1.5rem;">
+                    <div class="faq-page-container">
+                        
+                        <div id="generales" class="faq-category">
+                            <h2>Preguntas Generales</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                    <summary>¿Qué diferencia a ARm Laboral de una firma de abogados tradicional?</summary>
+                                    <div class="faq-answer"><p>La principal diferencia es nuestro modelo de tokens. En lugar de igualas mensuales fijas, adquieres "créditos" para servicios legales, lo que te da control total sobre tu inversión, máxima transparencia y cero costos ocultos. Pagas solo por lo que necesitas, cuando lo necesitas.</p></div>
+                                </details>
+                                <details>
+                                    <summary>¿Para qué tipo de empresas están diseñados sus servicios?</summary>
+                                    <div class="faq-answer"><p>Atendemos a empresas de todos los tamaños, desde startups y PyMEs hasta corporativos establecidos en México. Nuestro modelo es especialmente valioso para empresas que buscan optimizar su presupuesto legal sin sacrificar la calidad de la asesoría y defensa.</p></div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <div id="proceso-legal" class="faq-category">
+                            <h2>Sobre el Proceso Legal</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                    <summary>Mi empresa recibió una demanda, ¿cuál es el primer paso?</summary>
+                                    <div class="faq-answer"><p>El primer paso es contactarnos inmediatamente con la notificación en mano. Es crucial no responder ni negociar sin asesoría. Analizaremos el caso, te explicaremos tus opciones y el costo en tokens de cada escenario para que tomes una decisión informada y estratégica.</p></div>
+                                </details>
+                                <details>
+                                    <summary>¿Manejan la elaboración y revisión de contratos laborales?</summary>
+                                    <div class="faq-answer"><p>Sí, es uno de nuestros servicios clave. Un contrato de trabajo sólido y actualizado a la legislación vigente es la primera línea de defensa de tu empresa. Revisamos y elaboramos contratos individuales, colectivos y reglamentos internos para minimizar riesgos.</p></div>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div id="modelo" class="faq-category">
+                            <h2>Sobre Nuestro Modelo</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                  <summary>¿Cómo funcionan los Tokens de ARm Laboral?</summary>
+                                  <div class="faq-answer"><p>Cada token equivale a una unidad jurídica canjeable por un servicio legal completo, como la redacción de un contrato, una consulta específica o la elaboración de un acta administrativa. Este modelo ofrece transparencia total y un costo predecible, eliminando las sorpresas de los honorarios por hora.</p></div>
+                                </details>
+                                <details>
+                                  <summary>¿Qué ventaja tiene el modelo por Tokens sobre una iguala tradicional?</summary>
+                                  <div class="faq-answer"><p>La principal ventaja es la flexibilidad y la eficiencia. Pagas únicamente por los servicios que necesitas, cuando los necesitas. No hay costos fijos mensuales si tu demanda de servicios legales es variable, lo que lo hace ideal para startups y pymes que buscan optimizar su presupuesto.</p></div>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div id="alcance" class="faq-category">
+                            <h2>Alcance de Servicios</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                    <summary>¿Los tokens cubren todos los gastos de un juicio?</summary>
+                                    <div class="faq-answer"><p>Los tokens cubren todos nuestros honorarios profesionales por la estrategia, representación y seguimiento del caso. No incluyen gastos de terceros como peritajes, copias certificadas o viáticos fuera de la ciudad, los cuales se cotizan y autorizan por separado con total transparencia.</p></div>
+                                </details>
+                                <details>
+                                    <summary>¿Ofrecen capacitaciones a equipos de Recursos Humanos?</summary>
+                                    <div class="faq-answer"><p>¡Absolutamente! Creemos en la prevención. Ofrecemos talleres y capacitaciones personalizadas para tu equipo de RRHH y líderes de área sobre temas críticos como NOM-035, procesos de baja, acoso laboral y actualización de la reforma laboral. Estas sesiones también pueden ser cubiertas con tokens.</p></div>
+                                </details>
+                            </div>
+                        </div>
+                        
+                        <div id="contratacion" class="faq-category">
+                            <h2>Proceso de Contratación</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                    <summary>¿Cuál es el primer paso para contratar sus servicios?</summary>
+                                    <div class="faq-answer"><p>Todo comienza con una consulta inicial. Puedes agendarla a través de nuestro sitio web. En esta sesión, evaluamos tus necesidades, te explicamos cómo nuestro modelo puede beneficiarte y te recomendamos el paquete de tokens ideal para empezar a proteger tu empresa.</p></div>
+                                </details>
+                                <details>
+                                    <summary>¿Necesito firmar un contrato de iguala a largo plazo?</summary>
+                                    <div class="faq-answer"><p>No. Esa es la belleza de nuestro modelo. No hay contratos forzosos ni igualas mensuales. Simplemente adquieres tus tokens y los usas a tu ritmo. La relación se basa en la confianza y los resultados, no en un papel que te ate.</p></div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <div id="honorarios" class="faq-category">
+                            <h2>Honorarios y Pagos</h2>
+                            <div class="faq-accordion">
+                                <details>
+                                    <summary>¿Qué métodos de pago aceptan para la compra de tokens?</summary>
+                                    <div class="faq-answer"><p>Aceptamos transferencia bancaria (SPEI), tarjetas de crédito y débito a través de un enlace de pago seguro. Emitimos la factura correspondiente por la compra de tu paquete de tokens de inmediato.</p></div>
+                                </details>
+                                <details>
+                                    <summary>¿Los tokens tienen fecha de vencimiento?</summary>
+                                    <div class="faq-answer"><p>Nuestros paquetes de tokens estándar tienen una vigencia de 12 meses a partir de la fecha de compra, dándote amplia flexibilidad para utilizarlos. Siempre te notificaremos antes de que se acerque la fecha de vencimiento.</p></div>
+                                </details>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> <!-- Fin de la "caja" .card -->
         </div>
-    </section>
-
-    <section class="faq-content">
-      <div class="container faq-page-container">
-          
-          <div id="generales" class="faq-category">
-              <h2>Preguntas Generales</h2>
-              <div class="faq-accordion">
-                  <details>
-                      <summary>¿Qué diferencia a ARm Laboral de una firma de abogados tradicional?</summary>
-                      <div class="faq-answer"><p>La principal diferencia es nuestro modelo de tokens. En lugar de igualas mensuales fijas, adquieres "créditos" para servicios legales, lo que te da control total sobre tu inversión, máxima transparencia y cero costos ocultos. Pagas solo por lo que necesitas, cuando lo necesitas.</p></div>
-                  </details>
-                  <details>
-                      <summary>¿Para qué tipo de empresas están diseñados sus servicios?</summary>
-                      <div class="faq-answer"><p>Atendemos a empresas de todos los tamaños, desde startups y PyMEs hasta corporativos establecidos en México. Nuestro modelo es especialmente valioso para empresas que buscan optimizar su presupuesto legal sin sacrificar la calidad de la asesoría y defensa.</p></div>
-                  </details>
-              </div>
-          </div>
-
-          <div id="proceso-legal" class="faq-category">
-              <h2>Sobre el Proceso Legal</h2>
-              <div class="faq-accordion">
-                  <details>
-                      <summary>Mi empresa recibió una demanda, ¿cuál es el primer paso?</summary>
-                      <div class="faq-answer"><p>El primer paso es contactarnos inmediatamente con la notificación en mano. Es crucial no responder ni negociar sin asesoría. Analizaremos el caso, te explicaremos tus opciones y el costo en tokens de cada escenario para que tomes una decisión informada y estratégica.</p></div>
-                  </details>
-                  <details>
-                      <summary>¿Manejan la elaboración y revisión de contratos laborales?</summary>
-                      <div class="faq-answer"><p>Sí, es uno de nuestros servicios clave. Un contrato de trabajo sólido y actualizado a la legislación vigente es la primera línea de defensa de tu empresa. Revisamos y elaboramos contratos individuales, colectivos y reglamentos internos para minimizar riesgos.</p></div>
-                  </details>
-              </div>
-          </div>
-          
-          <div id="modelo" class="faq-category">
-              <h2>Sobre Nuestro Modelo</h2>
-              <div class="faq-accordion">
-                  <details>
-                    <summary>¿Cómo funcionan los Tokens de ARm Laboral?</summary>
-                    <div class="faq-answer"><p>Cada token equivale a una unidad jurídica canjeable por un servicio legal completo, como la redacción de un contrato, una consulta específica o la elaboración de un acta administrativa. Este modelo ofrece transparencia total y un costo predecible, eliminando las sorpresas de los honorarios por hora.</p></div>
-                  </details>
-                  <details>
-                    <summary>¿Qué ventaja tiene el modelo por Tokens sobre una iguala tradicional?</summary>
-                    <div class="faq-answer"><p>La principal ventaja es la flexibilidad y la eficiencia. Pagas únicamente por los servicios que necesitas, cuando los necesitas. No hay costos fijos mensuales si tu demanda de servicios legales es variable, lo que lo hace ideal para startups y pymes que buscan optimizar su presupuesto.</p></div>
-                  </details>
-              </div>
-          </div>
-          
-          <div id="alcance" class="faq-category">
-              <h2>Alcance de Servicios</h2>
-              <div class="faq-accordion">
-                  <details>
-                      <summary>¿Los tokens cubren todos los gastos de un juicio?</summary>
-                      <div class="faq-answer"><p>Los tokens cubren todos nuestros honorarios profesionales por la estrategia, representación y seguimiento del caso. No incluyen gastos de terceros como peritajes, copias certificadas o viáticos fuera de la ciudad, los cuales se cotizan y autorizan por separado con total transparencia.</p></div>
-                  </details>
-                  <details>
-                      <summary>¿Ofrecen capacitaciones a equipos de Recursos Humanos?</summary>
-                      <div class="faq-answer"><p>¡Absolutamente! Creemos en la prevención. Ofrecemos talleres y capacitaciones personalizadas para tu equipo de RRHH y líderes de área sobre temas críticos como NOM-035, procesos de baja, acoso laboral y actualización de la reforma laboral. Estas sesiones también pueden ser cubiertas con tokens.</p></div>
-                  </details>
-              </div>
-          </div>
-          
-          <div id="contratacion" class="faq-category">
-              <h2>Proceso de Contratación</h2>
-              <div class="faq-accordion">
-                  <details>
-                      <summary>¿Cuál es el primer paso para contratar sus servicios?</summary>
-                      <div class="faq-answer"><p>Todo comienza con una consulta inicial. Puedes agendarla a través de nuestro sitio web. En esta sesión, evaluamos tus necesidades, te explicamos cómo nuestro modelo puede beneficiarte y te recomendamos el paquete de tokens ideal para empezar a proteger tu empresa.</p></div>
-                  </details>
-                  <details>
-                      <summary>¿Necesito firmar un contrato de iguala a largo plazo?</summary>
-                      <div class="faq-answer"><p>No. Esa es la belleza de nuestro modelo. No hay contratos forzosos ni igualas mensuales. Simplemente adquieres tus tokens y los usas a tu ritmo. La relación se basa en la confianza y los resultados, no en un papel que te ate.</p></div>
-                  </details>
-              </div>
-          </div>
-
-          <div id="honorarios" class="faq-category">
-              <h2>Honorarios y Pagos</h2>
-              <div class="faq-accordion">
-                  <details>
-                      <summary>¿Qué métodos de pago aceptan para la compra de tokens?</summary>
-                      <div class="faq-answer"><p>Aceptamos transferencia bancaria (SPEI), tarjetas de crédito y débito a través de un enlace de pago seguro. Emitimos la factura correspondiente por la compra de tu paquete de tokens de inmediato.</p></div>
-                  </details>
-                  <details>
-                      <summary>¿Los tokens tienen fecha de vencimiento?</summary>
-                      <div class="faq-answer"><p>Nuestros paquetes de tokens estándar tienen una vigencia de 12 meses a partir de la fecha de compra, dándote amplia flexibilidad para utilizarlos. Siempre te notificaremos antes de que se acerque la fecha de vencimiento.</p></div>
-                  </details>
-              </div>
-          </div>
-      </div>
     </section>
 
     <section class="faq-cta-final">
       <div class="container">
-          <p class="sub">La tranquilidad de tu empresa es nuestra prioridad. Esperamos haber resuelto tus dudas, pero si necesitas una asesoría más personalizada, nuestro equipo está listo para ayudarte a navegar cualquier desafío laboral.</p>
+          <p class="sub">La tranquilidad de tu empresa es nuestra prioridad. ¿No encontraste lo que buscabas? Nuestro equipo está listo para ayudarte a navegar cualquier desafío laboral.</p>
           <a href="contacto.html" class="btn primary">Contáctanos ahora</a>
       </div>
     </section>
@@ -198,8 +203,8 @@
       <div class="footer-left">
         <a href="index.html" class="brand" aria-label="Inicio ARm Laboral">
           <span class="logo-container" aria-hidden="true">
-            <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async">
-            <img class="logo-dark" alt="ARm Laboral logo (dark)" src="logo-header-dark-40.webp" srcset="logo-header-dark-40.webp 1x, logo-header-dark-80.webp 2x" width="40" height="40" decoding="async">
+            <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async" loading="lazy">
+            <img class="logo-dark" alt="ARm Laboral logo (dark)" src="logo-header-dark-40.webp" srcset="logo-header-dark-40.webp 1x, logo-header-dark-80.webp 2x" width="40" height="40" decoding="async" loading="lazy">
           </span>
           <span>ARm Laboral</span>
         </a>
@@ -336,3 +341,4 @@
   </script>
 </body>
 </html>
+
