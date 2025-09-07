@@ -51,11 +51,10 @@ html {
     scroll-behavior: smooth;
 }
 
-/* === SOLUCIÓN SISTÉMICA PARA IMÁGENES RESPONSIVAS === */
 img, video {
     max-width: 100%;
     height: auto;
-    display: block; /* Previene espacios extra debajo de las imágenes */
+    display: block; 
 }
 
 
@@ -728,6 +727,7 @@ textarea.input {
     font-size: 14px;
 }
 
+
 /* =================================================================
    NUEVOS ESTILOS (PARA LA PÁGINA FAQS.HTML - VISIBLES EN TODOS LOS DISPOSITIVOS)
    ================================================================= */
@@ -789,7 +789,7 @@ textarea.input {
 
 /* =================================================================
    ESTILOS BASE PARA EL COMPONENTE ACORDEÓN (GLOBAL)
-   Ahora vive aquí para que funcione en mobile y desktop
+   Ahora vive aquí para que funcione en mobile y desktop (soluciones.html y faqs.html)
    ================================================================= */
 .faq-accordion { display: flex; flex-direction: column; gap: 1rem; }
 .faq-accordion details:hover { transform: scale(1.02); box-shadow: var(--ring-hover); }
@@ -798,3 +798,4 @@ textarea.input {
 .faq-accordion summary::after { content: '+'; font-size: 1.5rem; font-weight: 400; transition: transform 0.3s ease; }
 .faq-accordion details[open] summary::after { transform: rotate(45deg); }
 .faq-answer { padding: 0 1.5rem 1.5rem; line-height: 1.6; }
+
