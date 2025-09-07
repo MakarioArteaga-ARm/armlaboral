@@ -736,6 +736,13 @@ textarea.input {
     padding: 60px 0;
 }
 
+.faq-intro .container p {
+    max-width: 70ch;
+    font-size: 1.2rem;
+    margin: auto;
+    color: var(--muted);
+}
+
 .faq-content {
     padding-top: 60px;
     padding-bottom: 20px;
