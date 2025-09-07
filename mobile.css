@@ -79,6 +79,7 @@
         justify-content: center;
     }
 
+    /* --- FOOTER (PIE DE PÁGINA) --- */
     .foot {
         text-align: center;
         padding: 40px 0;
@@ -90,8 +91,15 @@
         gap: 16px;
     }
     
+    /* =======================================================
+       LA CORRECCIÓN ESTÁ AQUÍ
+       Añadimos display:flex para ponerlos en fila y un gap
+       para darles espacio, igual que en desktop.
+       ======================================================= */
     .footer-left .social-icons {
+        display: flex;
         justify-content: center;
+        gap: 16px;
     }
     .footer-right {
         margin-top: 30px;
@@ -147,6 +155,7 @@
         box-shadow: 0 2px 8px rgb(0 0 0 / .06);
     }
 
+    /* --- TESTIMONIOS --- */
     .testimonial-preview {
         display: none;
     }
