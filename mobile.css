@@ -90,17 +90,16 @@
         padding: 40px 0;
     }
 
-    .footer-left .brand,
-    .social-icons {
+    .footer-left .brand {
         display: flex;
         justify-content: center;
         gap: 16px;
     }
     
-    .footer-right,
-    .footer-social,
-    .footer-credits {
-        text-align: center;
+    .footer-left .social-icons {
+        justify-content: center;
+    }
+    .footer-right {
         margin-top: 30px;
     }
 
