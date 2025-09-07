@@ -188,6 +188,7 @@
   .footer-credits {
     margin-top: 15px;
   }
+
 /* =================================================================
    NUEVOS ESTILOS (EXCLUSIVOS PARA LA PÁGINA FAQS.HTML)
    ================================================================= */
@@ -211,4 +212,5 @@
 
 .faq-content .faq-accordion summary::after {
     color: var(--primary-dynamic);
+}
 }
