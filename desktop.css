@@ -137,9 +137,6 @@
     opacity: 0.8;
   }
   
-  /* =========================
-     FOOTER GRID (SIMPLIFICADO)
-  ========================== */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -147,7 +144,12 @@
     align-items: start; 
   }
   .footer-left { text-align: left; }
-  .footer-right { text-align: right; }
+  .footer-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .footer-left .social-icons {
   display: flex; /* La línea que faltaba */
@@ -165,7 +167,6 @@
     transform: scale(1.1);
     opacity: 0.85;
   }
-}
 
 /* =========================
    ESTILOS PARA ACORDEÓN DE FAQS
@@ -178,7 +179,6 @@
 .faq-accordion details[open] summary::after { transform: rotate(45deg); }
 .faq-answer { padding: 0 1.5rem 1.5rem; line-height: 1.6; 
   }
-}
 
 /* Estilos para la página de FAQs */
 .faq-index {
