@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
   </noscript>
   
-<!-- Estilos con Cache Busting -->
+  <!-- Estilos con Cache Busting -->
   <link rel="stylesheet" href="base.css?v=1.0.2">
   <link rel="stylesheet" href="mobile.css?v=1.0.2" media="(max-width: 900px)">
   <link rel="stylesheet" href="desktop.css?v=1.0.2" media="(min-width: 901px)">
@@ -50,7 +50,6 @@
 
 <body>
   <header id="main-header">
-    <!-- El código de tu header actual va aquí, lo he replicado del archivo de referencia -->
     <nav class="container nav">
       <a href="index.html" class="brand">
         <div class="logo-container">
@@ -74,7 +73,6 @@
   </header>
 
   <main>
-    <!-- Hero Section (tomado de tu archivo de referencia) -->
     <section class="hero hero-index" style="background-color: transparent;">
       <svg class="hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,120 C480,0 960,0 1440,120 Z"></path>
@@ -93,14 +91,12 @@
       </div>
     </section>
     
-    <!-- Mensaje de Bienvenida -->
     <section class="faq-intro">
         <div class="container">
             <p>¡Bienvenido a nuestro centro de información! En ARm Laboral, creemos en la comunicación directa y eficiente. Aquí hemos recopilado las preguntas más habituales sobre nuestro modelo de servicio, procesos y cómo podemos blindar legalmente a tu empresa. Si no encuentras lo que buscas, estamos a un clic de distancia.</p>
         </div>
     </section>
 
-    <!-- Contenido de FAQs -->
     <section class="faq-content">
       <div class="container faq-page-container">
           
@@ -190,17 +186,14 @@
       </div>
     </section>
 
-    <!-- Mensaje Final y CTA -->
     <section class="faq-cta-final">
       <div class="container">
           <p class="sub">La tranquilidad de tu empresa es nuestra prioridad. Esperamos haber resuelto tus dudas, pero si necesitas una asesoría más personalizada, nuestro equipo está listo para ayudarte a navegar cualquier desafío laboral.</p>
           <a href="contacto.html" class="btn primary">Contáctanos ahora</a>
       </div>
     </section>
-
   </main>
 
-  <!-- El footer que ya corregimos -->
   <footer>
     <div class="container foot footer-grid">
       <div class="footer-left">
@@ -237,18 +230,20 @@
     </div>
   </footer>
 
-  <!-- Scripts y otros elementos del final del body -->
   <div class="whatsapp-fab" id="whatsapp-fab">
     <img src="whatsapp_40.webp" srcset="whatsapp_40.webp 1x, whatsapp_80.webp 2x" alt="WhatsApp" width="34" height="34" decoding="async" loading="lazy" />
     <span class="fab-badge">1</span>
   </div>
+  <div class="whatsapp-popup" id="whatsapp-popup">
+    <p>¿Hablamos por WhatsApp?</p>
+    <a class="btn primary" href="https://wa.me/528123682595?text=Hola%20ARm%20Laboral" target="_blank">Abrir chat</a>
+    <button class="btn hero-alt" id="close-popup">Cerrar</button>
+  </div>
   
   <script src="script.js?v=1.0.2" defer></script>
   
-  <!-- Breadcrumbs Schema -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://armlaboral.com/"},{"@type":"ListItem","position":2,"name":"Preguntas Frecuentes"}]}</script>
   
-  <!-- FAQPage Schema (Actualizado con las 12 preguntas) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -342,3 +337,4 @@
   </script>
 </body>
 </html>
+
