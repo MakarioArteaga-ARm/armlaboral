@@ -144,7 +144,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: end; 
+    align-items: start; 
   }
   .footer-left { text-align: left; }
   .footer-right { text-align: right; }
