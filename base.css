@@ -728,3 +728,59 @@ textarea.input {
     margin: 0 0 10px;
     font-size: 14px;
 }
+
+.faq-intro,
+.faq-cta-final {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.faq-intro {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.faq-intro .container p {
+    max-width: 70ch;
+    font-size: 1.2rem;
+    margin: auto;
+    color: var(--muted);
+}
+
+.faq-content {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+.faq-page-container { 
+    max-width: 800px; 
+    margin: auto; 
+}
+.faq-category { 
+    margin-bottom: 3rem; 
+}
+.faq-page-container h2 {
+    font-size: 1.8rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(13, 71, 161, 0.1);
+    display: flex;
+    align-items: center;
+    color: var(--primary-dark);
+}
+.faq-page-container h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-dynamic);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.faq-cta-final {
+    background-color: var(--bg-light);
+    margin-top: 40px;
+}
+.faq-cta-final .sub {
+    margin-bottom: 2rem;
+}
