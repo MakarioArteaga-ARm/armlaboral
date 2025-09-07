@@ -726,7 +726,6 @@ textarea.input {
     font-size: 14px;
 }
 
-
 /* =================================================================
    NUEVOS ESTILOS (PARA LA PÁGINA FAQS.HTML - VISIBLES EN TODOS LOS DISPOSITIVOS)
    ================================================================= */
@@ -798,7 +797,7 @@ textarea.input {
    ================================================================= */
 .faq-body {
     padding-top: 80px;
-    padding-bottom: 40px; /* Reducido para juntar el CTA */
+    padding-bottom: 10px; /* Reducido para juntar el CTA */
 }
 
 .faq-welcome-text {
