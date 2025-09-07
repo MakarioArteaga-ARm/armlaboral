@@ -67,15 +67,10 @@
         justify-content: center;
     }
 
-    /* ========= LA MODIFICACIÓN ESTÁ AQUÍ ========= */
-    /* Heurística para centrar tarjetas apiladas (Misión/Visión) */
     .cards-stack-centered > .card {
         text-align: center;
     }
-    /* ============================================= */
 
-
-    /* --- FORMULARIO DE CONTACTO --- */
     .form .row > div {
         margin-bottom: 16px;
     }
@@ -84,7 +79,6 @@
         justify-content: center;
     }
 
-    /* --- FOOTER (PIE DE PÁGINA) --- */
     .foot {
         text-align: center;
         padding: 40px 0;
@@ -153,7 +147,6 @@
         box-shadow: 0 2px 8px rgb(0 0 0 / .06);
     }
 
-    /* --- TESTIMONIOS --- */
     .testimonial-preview {
         display: none;
     }
