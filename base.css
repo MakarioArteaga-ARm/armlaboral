@@ -793,3 +793,24 @@ textarea.input {
 .faq-accordion details[open] summary::after { transform: rotate(45deg); }
 .faq-answer { padding: 0 1.5rem 1.5rem; line-height: 1.6; }
 
+/* =================================================================
+   NUEVOS ESTILOS PARA LA PÁGINA FAQS (SOLUCIÓN LIMPIA)
+   ================================================================= */
+.faq-body {
+    padding-top: 80px;
+    padding-bottom: 40px; /* Reducido para juntar el CTA */
+}
+
+.faq-welcome-text {
+    padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.faq-welcome-text p {
+    font-size: 1.1rem;
+    color: var(--ink); /* Color negro, no gris */
+    max-width: 80ch;
+}
+
+.faq-content {
+    padding: 40px 1.5rem 1.5rem 1.5rem;
+}
