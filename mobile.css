@@ -22,9 +22,14 @@
         display: block;
     }
 
-    /* --- HERO SECTION --- */
+    /* =======================================================
+       LA CORRECCIÓN ESTÁ AQUÍ
+       Reducimos el padding inferior de 80px a 50px.
+       Esto crea un espacio natural y correcto entre el final
+       del hero y la primera tarjeta.
+       ======================================================= */
     .hero {
-        padding: 120px 0 80px;
+        padding: 120px 0 50px;
     }
 
     .hero-inner {
@@ -45,11 +50,10 @@
     }
 
     /* =======================================================
-       NUEVA REGLA #1: Arregla el espaciado en la página de inicio
+       REGLA INCORRECTA ELIMINADA
+       El bloque que estaba aquí (.hero-inner > .animate-on-scroll > .actions)
+       ha sido eliminado por completo.
        ======================================================= */
-    .hero-inner > .animate-on-scroll > .actions {
-        margin-bottom: -40px; /* Un margen negativo para 'subir' los botones y reducir el espacio */
-    }
 
 
     /* --- COMPONENTES --- */
@@ -88,7 +92,7 @@
     }
 
     /* =======================================================
-       NUEVA REGLA #2: Arregla el espaciado en la página de FAQs
+       REGLA PARA ESPACIADO EN PÁGINA DE FAQS
        ======================================================= */
     .faq-page-container h2 {
         margin-top: 2.5rem; /* Añade más espacio arriba de cada título de categoría */
@@ -177,4 +181,3 @@
         height: auto;
     }
 }
-
