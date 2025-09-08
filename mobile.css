@@ -44,6 +44,14 @@
         max-width: 320px;
     }
 
+    /* =======================================================
+       NUEVA REGLA #1: Arregla el espaciado en la página de inicio
+       ======================================================= */
+    .hero-inner > .animate-on-scroll > .actions {
+        margin-bottom: -40px; /* Un margen negativo para 'subir' los botones y reducir el espacio */
+    }
+
+
     /* --- COMPONENTES --- */
     .card {
         margin-bottom: 24px;
@@ -79,6 +87,14 @@
         justify-content: center;
     }
 
+    /* =======================================================
+       NUEVA REGLA #2: Arregla el espaciado en la página de FAQs
+       ======================================================= */
+    .faq-page-container h2 {
+        margin-top: 2.5rem; /* Añade más espacio arriba de cada título de categoría */
+    }
+
+
     /* --- FOOTER (PIE DE PÁGINA) --- */
     .foot {
         text-align: center;
@@ -91,11 +107,6 @@
         gap: 16px;
     }
     
-    /* =======================================================
-       LA CORRECCIÓN ESTÁ AQUÍ
-       Añadimos display:flex para ponerlos en fila y un gap
-       para darles espacio, igual que en desktop.
-       ======================================================= */
     .footer-left .social-icons {
         display: flex;
         justify-content: center;
@@ -166,3 +177,4 @@
         height: auto;
     }
 }
+
