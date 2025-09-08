@@ -23,13 +23,14 @@
     }
 
     /* =======================================================
-       LA CORRECCIÓN ESTÁ AQUÍ
-       Reducimos el padding inferior de 80px a 50px.
-       Esto crea un espacio natural y correcto entre el final
-       del hero y la primera tarjeta.
+       LA CORRECCIÓN FINAL ESTÁ AQUÍ
+       Incrementamos el padding inferior de 50px a 100px.
+       Esto le da al hero más "aire" en la parte de abajo,
+       creando el espacio necesario para que la tarjeta
+       que sube no se vea pegada a los botones.
        ======================================================= */
     .hero {
-        padding: 120px 0 50px;
+        padding: 120px 0 100px;
     }
 
     .hero-inner {
@@ -48,13 +49,6 @@
         width: 100%;
         max-width: 320px;
     }
-
-    /* =======================================================
-       REGLA INCORRECTA ELIMINADA
-       El bloque que estaba aquí (.hero-inner > .animate-on-scroll > .actions)
-       ha sido eliminado por completo.
-       ======================================================= */
-
 
     /* --- COMPONENTES --- */
     .card {
