@@ -4,38 +4,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#0D47A1">
+
+  <link rel="canonical" href="https://armlaboral.com/">
   
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CGHS82RP3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-2CGHS82RP3');
+    gtag('config', 'G-2CGHS82RP3', { anonymize_ip: true });
   </script>
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <title>ARm Laboral | Asesoría y Defensa Laboral para Empresas en México</title>
+  <meta name="description" content="Protege tu negocio con asesoría laboral premium en Monterrey. Soluciones claras y resultados sólidos con ARm Laboral.">
 
-  <title>Preguntas Frecuentes — Claridad en Asesoría Legal | ARm Laboral</title>
-  <meta name="description" content="Resolvemos todas tus dudas sobre nuestro modelo de Tokens, alcance de servicios, procesos y más. Obtén la información clave para proteger tu empresa con ARm Laboral." />
-  <meta name="theme-color" content="#0D47A1" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:url" content="https://armlaboral.com/faqs.html">
+  <meta property="og:url" content="https://armlaboral.com/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Preguntas Frecuentes — Claridad en Asesoría Legal | ARm Laboral">
-  <meta property="og:description" content="Resolvemos todas tus dudas sobre nuestro modelo de Tokens, alcance de servicios, procesos y más. Obtén la información clave para proteger tu empresa con ARm Laboral.">
+  <meta property="og:title" content="ARm Laboral — Asesoría y Defensa Laboral para Empresas en México.">
+  <meta property="og:description" content="Protege tu negocio con asesoría laboral premium en Monterrey. Soluciones claras y resultados sólidos con ARm Laboral.">
   <meta property="og:image" content="https://armlaboral.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:domain" content="armlaboral.com">
-  <meta property="twitter:url" content="https://armlaboral.com/faqs.html">
-  <meta name="twitter:title" content="Preguntas Frecuentes — Claridad en Asesoría Legal | ARm Laboral">
-  <meta name="twitter:description" content="Resolvemos todas tus dudas sobre nuestro modelo de Tokens, alcance de servicios, procesos y más. Obtén la información clave para proteger tu empresa con ARm Laboral.">
+  <meta property="twitter:url" content="https://armlaboral.com/">
+  <meta name="twitter:title" content="ARm Laboral — Tu empresa merece respaldo legal que trasciende.">
+  <meta name="twitter:description" content="Asesoría y defensa laboral para empresas. Estrategia, claridad y resultados.">
   <meta name="twitter:image" content="https://armlaboral.com/og-image.jpg">
-
-  <!-- Carga optimizada de Google Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -43,161 +50,118 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap">
   </noscript>
   
-  <!-- Estilos con la versión que contiene los estilos del acordeón -->
   <link rel="stylesheet" href="base.css?v=1.0.3">
-  <link rel="stylesheet" href="mobile.css?v=1.0.3" media="(max-width: 900px)">
-  <link rel="stylesheet" href="desktop.css?v=1.0.3" media="(min-width: 901px)">
+<link rel="stylesheet" href="mobile.css?v=1.0.3" media="(max-width: 900px)">
+<link rel="stylesheet" href="desktop.css?v=1.0.3" media="(min-width: 901px)">
 </head>
 <body>
-  <header id="main-header">
-    <nav class="container nav">
-      <a href="index.html" class="brand">
-        <div class="logo-container">
-          <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async" />
+  <header id="main-header" role="banner">
+    <nav class="container nav" aria-label="Navegación principal">
+      <a href="index.html" class="brand" aria-label="Inicio ARm Laboral">
+        <span class="logo-container" aria-hidden="true">
+          <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async" fetchpriority="high" />
           <img class="logo-dark" alt="ARm Laboral logo (dark)" src="logo-header-dark-40.webp" srcset="logo-header-dark-40.webp 1x, logo-header-dark-80.webp 2x" width="40" height="40" decoding="async" />
-        </div>
-        <div>ARm Laboral</div>
+        </span>
+        <span>ARm Laboral</span>
       </a>
-      <div class="main-menu" id="main-menu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
+      <div class="main-menu" id="main-menu" role="dialog" aria-modal="true" aria-label="Menú">
+        <ul role="list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="soluciones.html">Soluciones</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
-      <!-- CORRECCIÓN: Se arregló el viewBox del SVG -->
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero hero-index" style="background-color: transparent;">
-      <svg class="hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <path d="M0,120 C480,0 960,0 1440,120 Z"></path>
-      </svg>
+  <main id="contenido">
+    <section class="hero hero-index" id="inicio" aria-labelledby="hero-title">
       <div class="container hero-inner">
-        <div class="animate-on-scroll" style="text-align: left;">
-          <span class="kicker">Información Clave</span>
-          <h1 class="glass-text">Preguntas Frecuentes</h1>
-          <h2 class="glass-text">Claridad y transparencia en cada paso.</h2>
-          <p class="lead" style="color: rgba(255,255,255,0.7);">Resolvemos tus dudas para que tomes decisiones informadas con total confianza.</p>
-          <div class="actions">
-            <a class="btn primary" href="soluciones.html">Ver Soluciones</a>
-            <a class="btn hero-alt" href="contacto.html">Contacta Ahora</a>
+        <div>
+          <span class="kicker">Consultoría legal empresarial</span>
+          <h1 id="hero-title" class="glass-text">ARm Laboral</h1>
+          <h2 class="glass-text">Donde tu negocio quiera llegar, te acompaña con seguridad y legitimidad.</h2>
+          <p class="lead glass-text">Estrategia, ejecución y documentación impecable. Defendemos a tu empresa con claridad y velocidad, sin burocracia.</p>
+          <div class="actions" role="group" aria-label="Acciones principales">
+            <a class="btn primary" href="contacto.html" rel="noopener">Solicitar consulta</a>
+            <a class="btn hero-alt" href="soluciones.html">Ver soluciones</a>
           </div>
         </div>
       </div>
+      <svg class="hero-curve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,120 C480,0 960,0 1440,120 Z"></path>
+      </svg>
     </section>
-    
-    <section class="faq-body">
-        <div class="container">
-            <div class="card animate-on-scroll">
-                <div class="faq-welcome-text">
-                    <p>¡Bienvenido a nuestro centro de información! En ARm Laboral, creemos en la comunicación directa y eficiente. Aquí hemos recopilado las preguntas más habituales sobre nuestro modelo de servicio, procesos y cómo podemos blindar legalmente a tu empresa.</p>
-                </div>
 
-                <div class="faq-content">
-                    <div class="faq-page-container">
-                        
-                        <div id="generales" class="faq-category">
-                            <h2>Preguntas Generales</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                    <summary>¿Qué diferencia a ARm Laboral de una firma de abogados tradicional?</summary>
-                                    <div class="faq-answer"><p>La principal diferencia es nuestro modelo de tokens. En lugar de igualas mensuales fijas, adquieres "créditos" para servicios legales, lo que te da control total sobre tu inversión, máxima transparencia y cero costos ocultos. Pagas solo por lo que necesitas, cuando lo necesitas.</p></div>
-                                </details>
-                                <details>
-                                    <summary>¿Para qué tipo de empresas están diseñados sus servicios?</summary>
-                                    <div class="faq-answer"><p>Atendemos a empresas de todos los tamaños, desde Startups y MiPyMEs hasta corporativos establecidos en México. Nuestro modelo es especialmente valioso para empresas que buscan optimizar su presupuesto legal sin sacrificar la calidad de la asesoría y defensa.</p></div>
-                                </details>
-                            </div>
-                        </div>
-
-                        <div id="proceso-legal" class="faq-category">
-                            <h2>Sobre el Proceso Legal</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                    <summary>Mi empresa recibió una demanda, ¿cuál es el primer paso?</summary>
-                                    <div class="faq-answer"><p>El primer paso es contactarnos inmediatamente con la notificación en mano. Es crucial no responder ni negociar sin asesoría. Analizaremos el caso, te explicaremos tus opciones y el costo en tokens de cada escenario para que tomes una decisión informada y estratégica.</p></div>
-                                </details>
-                                <details>
-                                    <summary>¿Manejan la elaboración y revisión de contratos laborales?</summary>
-                                    <div class="faq-answer"><p>Sí, es uno de nuestros servicios clave. Un contrato de trabajo sólido y actualizado a la legislación vigente es la primera línea de defensa de tu empresa. Revisamos y elaboramos contratos individuales, colectivos y reglamentos internos para minimizar riesgos.</p></div>
-                                </details>
-                            </div>
-                        </div>
-                        
-                        <div id="modelo" class="faq-category">
-                            <h2>Sobre Nuestro Modelo</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                  <summary>¿Cómo funcionan los Tokens de ARm Laboral?</summary>
-                                  <div class="faq-answer"><p>Cada token equivale a una unidad jurídica canjeable por un servicio legal completo, como la redacción de un contrato, una consulta específica o la elaboración de un acta administrativa. Este modelo ofrece transparencia total y un costo predecible, eliminando las sorpresas de los honorarios por hora.</p></div>
-                                </details>
-                                <details>
-                                  <summary>¿Qué ventaja tiene el modelo por Tokens sobre una iguala tradicional?</summary>
-                                  <div class="faq-answer"><p>La principal ventaja es la flexibilidad y la eficiencia. Pagas únicamente por los servicios que necesitas, cuando los necesitas. No hay costos fijos mensuales si tu demanda de servicios legales es variable, lo que lo hace ideal para startups y pymes que buscan optimizar su presupuesto.</p></div>
-                                </details>
-                            </div>
-                        </div>
-                        
-                        <div id="alcance" class="faq-category">
-                            <h2>Alcance de Servicios</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                    <summary>¿Los tokens cubren todos los gastos de un juicio?</summary>
-                                    <div class="faq-answer"><p>Los tokens cubren todos nuestros honorarios profesionales por la estrategia, representación y seguimiento del caso. No incluyen gastos de terceros como peritajes, copias certificadas o viáticos fuera de la ciudad, los cuales se cotizan y autorizan por separado con total transparencia.</p></div>
-                                </details>
-                                <details>
-                                    <summary>¿Ofrecen capacitaciones a equipos de Recursos Humanos?</summary>
-                                    <div class="faq-answer"><p>¡Absolutamente! Creemos en la prevención. Ofrecemos talleres y capacitaciones personalizadas para tu equipo de RRHH y líderes de área sobre temas críticos como NOM-035, procesos de baja, acoso laboral y actualización de la reforma laboral. Estas sesiones también pueden ser cubiertas con tokens.</p></div>
-                                </details>
-                            </div>
-                        </div>
-                        
-                        <div id="contratacion" class="faq-category">
-                            <h2>Proceso de Contratación</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                    <summary>¿Cuál es el primer paso para contratar sus servicios?</summary>
-                                    <div class="faq-answer"><p>Todo comienza con una consulta inicial. Puedes agendarla a través de nuestro sitio web. En esta sesión, evaluamos tus necesidades, te explicamos cómo nuestro modelo puede beneficiarte y te recomendamos el paquete de tokens ideal para empezar a proteger tu empresa.</p></div>
-                                </details>
-                                <details>
-                                    <summary>¿Necesito firmar un contrato de iguala a largo plazo?</summary>
-                                    <div class="faq-answer"><p>No. Esa es la belleza de nuestro modelo. No hay contratos forzosos ni igualas mensuales. Simplemente adquieres tus tokens y los usas a tu ritmo. La relación se basa en la confianza y los resultados, no en un papel que te ate.</p></div>
-                                </details>
-                            </div>
-                        </div>
-
-                        <div id="honorarios" class="faq-category">
-                            <h2>Honorarios y Pagos</h2>
-                            <div class="faq-accordion">
-                                <details>
-                                    <summary>¿Qué métodos de pago aceptan para la compra de tokens?</summary>
-                                    <div class="faq-answer"><p>Aceptamos transferencia bancaria (SPEI), tarjetas de crédito y débito a través de un enlace de pago seguro. Emitimos la factura correspondiente por la compra de tu paquete de tokens de inmediato.</p></div>
-                                </details>
-                                <details>
-                                    <summary>¿Los tokens tienen fecha de vencimiento?</summary>
-                                    <div class="faq-answer"><p>Nuestros paquetes de tokens estándar tienen una vigencia de 12 meses a partir de la fecha de compra, dándote amplia flexibilidad para utilizarlos. Siempre te notificaremos antes de que se acerque la fecha de vencimiento.</p></div>
-                                </details>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div> <!-- Fin de la "caja" .card -->
+    <section>
+      <div class="container grid-2 cards-stack-centered animate-on-scroll">
+        <div class="grid-text card">
+          <h2 class="title-accent">Qué resolvemos</h2>
+          <ul class="hero-list" role="list">
+            <li>Contrataciones y salidas blindadas.</li>
+            <li>Litigio estratégico y conciliación con visión empresarial.</li>
+            <li>Auditorías de cumplimiento que previenen sanciones.</li>
+          </ul>
         </div>
+        <div class="grid-media card">
+          <h2 class="title-accent">Cómo trabajamos</h2>
+          <ul class="hero-list" role="list">
+            <li>Diagnóstico claro, en términos simples.</li>
+            <li>Soluciones a tu medida, sin burocracia.</li>
+            <li>Contacto inmediato, sin intermediarios.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section class="cta-final-bg">
-      <div class="container">
-          <p class="sub">La tranquilidad de tu empresa es nuestra prioridad. ¿No encontraste lo que buscabas? Nuestro equipo está listo para ayudarte a navegar cualquier desafío laboral.</p>
+    <section id="areas" aria-labelledby="areas-title">
+      <div class="container grid-2">
+        <div class="grid-text section-head-left animate-on-scroll">
+          <h2 id="areas-title" class="title-accent">Áreas de Práctica</h2>
+          <p class="sub">Nuestros expertos están listos para asesorarte y defender a tu empresa en los frentes legales más importantes.</p>
           <div class="actions">
-            <a href="contacto.html" class="btn primary">Contáctanos ahora</a>
+            <a class="btn primary" href="nosotros.html">Conócenos</a>
           </div>
+        </div>
+        <div class="grid-media solutions-grid">
+          <article class="card animate-on-scroll"><h3>Laboral</h3><p class="sub">Despidos, contratos, conciliaciones, inspecciones y más.</p></article>
+          <article class="card animate-on-scroll"><h3>Fiscal</h3><p class="sub">Defensa contra créditos fiscales, auditorías del SAT y estrategia legal.</p></article>
+          <article class="card animate-on-scroll"><h3>Amparo</h3><p class="sub">Juicios de Amparo para protegerte de actos de autoridad.</p></article>
+          <article class="card animate-on-scroll"><h3>Compliance</h3><p class="sub">Revisión y plan de corrección para cumplimiento de NOMs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="soluciones" aria-labelledby="soluciones-title">
+      <div class="container grid-2 reverse-on-desktop">
+        <div class="grid-text section-head-right animate-on-scroll">
+          <h2 id="soluciones-title" class="title-accent">Soluciones legales para empresas</h2>
+          <p class="sub">Soluciones legales diseñadas para que tu empresa avance sin riesgos.</p>
+          <div class="actions">
+            <a class="btn hero-alt" href="contacto.html">Agendar diagnóstico</a>
+          </div>
+        </div>
+        <div class="grid-media solutions-grid">
+          <article class="card animate-on-scroll" itemscope itemtype="https://schema.org/Service"><h3 itemprop="name">Solución para Operaciones</h3><p itemprop="description">Tu operación diaria protegida: contratos sólidos, bajas ordenadas y soporte inmediato. Reduce riesgos y costos innecesarios.</p></article>
+          <article class="card animate-on-scroll" itemscope itemtype="https://schema.org/Service"><h3 itemprop="name">Solución para Cumplimiento</h3><p itemprop="description">Cumplimiento que evita sorpresas: auditorías rápidas, expedientes claros y planes de corrección que previenen sanciones.</p></article>
+          <article class="card animate-on-scroll" itemscope itemtype="https://schema.org/Service"><h3 itemprop="name">Solución para Estrategia</h3><p itemprop="description">Estrategia que protege patrimonio y reputación: conciliación efectiva y defensa sólida con documentación impecable.</p></article>
+          <article class="card animate-on-scroll" itemscope itemtype="https://schema.org/Service"><h3 itemprop="name">Solución para Dirección</h3><p itemprop="description">Decisiones estratégicas con respaldo legal: protocolos de alto nivel, asesoría directa que sostiene crecimiento y reputación.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="center cta-final-bg" id="contacto" aria-labelledby="contacto-title">
+      <div class="container animate-on-scroll">
+        <h2 id="contacto-title" class="title-accent">Listo para llevar tu negocio con seguridad y legitimidad.</h2>
+        <p class="sub">Desde Monterrey, acompañamos a empresas en todo México por canales digitales.</p>
+        <div class="actions" role="group" aria-label="Canales de contacto">
+          <a class="btn primary" href="nosotros.html">Conócenos</a>
+          <a class="btn hero-alt" href="contacto.html">Ya estoy listo</a>
+        </div>
       </div>
     </section>
   </main>
@@ -207,8 +171,8 @@
       <div class="footer-left">
         <a href="index.html" class="brand" aria-label="Inicio ARm Laboral">
           <span class="logo-container" aria-hidden="true">
-            <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async" loading="lazy">
-            <img class="logo-dark" alt="ARm Laboral logo (dark)" src="logo-header-dark-40.webp" srcset="logo-header-dark-40.webp 1x, logo-header-dark-80.webp 2x" width="40" height="40" decoding="async" loading="lazy">
+            <img class="logo-white" alt="ARm Laboral logo" src="logo-header-40.webp" srcset="logo-header-40.webp 1x, logo-header-80.webp 2x" width="40" height="40" decoding="async">
+            <img class="logo-dark" alt="ARm Laboral logo (dark)" src="logo-header-dark-40.webp" srcset="logo-header-dark-40.webp 1x, logo-header-dark-80.webp 2x" width="40" height="40" decoding="async">
           </span>
           <span>ARm Laboral</span>
         </a>
@@ -247,100 +211,45 @@
     <a class="btn primary" href="https://wa.me/528123682595?text=Hola%20ARm%20Laboral" target="_blank">Abrir chat</a>
     <button class="btn hero-alt" id="close-popup">Cerrar</button>
   </div>
-  
-  <script src="script.js?v=1.0.2" defer></script>
-  
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://armlaboral.com/"},{"@type":"ListItem","position":2,"name":"Preguntas Frecuentes"}]}</script>
-  
+  <script src="script.js?v=1.0.3" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "¿Qué diferencia a ARm Laboral de una firma de abogados tradicional?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La principal diferencia es nuestro modelo de tokens. En lugar de igualas mensuales fijas, adquieres 'créditos' para servicios legales, lo que te da control total sobre tu inversión, máxima transparencia y cero costos ocultos. Pagas solo por lo que necesitas, cuando lo necesitas."
+    "@graph": [
+      {
+        "@type": "LegalService",
+        "name": "ARm Laboral",
+        "image": "https://armlaboral.com/img/logo-mark.png",
+        "url": "https://armlaboral.com/",
+        "email": "contacto@armlaboral.com",
+        "telephone": "+52 81 2368 2595",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. José Vasconcelos 755-Piso 3 y 4, Col. del Valle, Los Sabinos",
+          "postalCode": "66220",
+          "addressLocality": "Monterrey",
+          "addressRegion": "NL",
+          "addressCountry": "MX"
+        },
+        "areaServed": "MX",
+        "priceRange": "$$",
+        "sameAs": [
+          "https://www.facebook.com/armlaboral",
+          "https://www.instagram.com/armlaboral"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://armlaboral.com/",
+        "name": "ARm Laboral",
+        "inLanguage": "es-MX",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://armlaboral.com/buscar?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       }
-    }, {
-      "@type": "Question",
-      "name": "¿Para qué tipo de empresas están diseñados sus servicios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Atendemos a empresas de todos los tamaños, desde startups y PyMEs hasta corporativos establecidos en México. Nuestro modelo es especialmente valioso para empresas que buscan optimizar su presupuesto legal sin sacrificar la calidad de la asesoría y defensa."
-      }
-    }, {
-      "@type": "Question",
-      "name": "Mi empresa recibió una demanda, ¿cuál es el primer paso?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El primer paso es contactarnos inmediatamente con la notificación en mano. Es crucial no responder ni negociar sin asesoría. Analizaremos el caso, te explicaremos tus opciones y el costo en tokens de cada escenario para que tomes una decisión informada y estratégica."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Manejan la elaboración y revisión de contratos laborales?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, es uno de nuestros servicios clave. Un contrato de trabajo sólido y actualizado a la legislación vigente es la primera línea de defensa de tu empresa. Revisamos y elaboramos contratos individuales, colectivos y reglamentos internos para minimizar riesgos."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Cómo funcionan los Tokens de ARm Laboral?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Cada token equivale a una unidad jurídica canjeable por un servicio legal completo, como la redacción de un contrato, una consulta específica o la elaboración de un acta administrativa. Este modelo ofrece transparencia total y un costo predecible, eliminando las sorpresas de los honorarios por hora."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Qué ventaja tiene el modelo por Tokens sobre una iguala tradicional?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La principal ventaja es la flexibilidad y la eficiencia. Pagas únicamente por los servicios que necesitas, cuando los necesitas. No hay costos fijos mensuales si tu demanda de servicios legales es variable, lo que lo hace ideal para startups y pymes que buscan optimizar su presupuesto."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Los tokens cubren todos los gastos de un juicio?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Los tokens cubren todos nuestros honorarios profesionales por la estrategia, representación y seguimiento del caso. No incluyen gastos de terceros como peritajes, copias certificadas o viáticos fuera de la ciudad, los cuales se cotizan y autorizan por separado con total transparencia."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Ofrecen capacitaciones a equipos de Recursos Humanos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "¡Absolutamente! Creemos en la prevención. Ofrecemos talleres y capacitaciones personalizadas para tu equipo de RRHH y líderes de área sobre temas críticos como NOM-035, procesos de baja, acoso laboral y actualización de la reforma laboral. Estas sesiones también pueden ser cubiertas con tokens."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Cuál es el primer paso para contratar sus servicios?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Todo comienza con una consulta inicial. Puedes agendarla a través de nuestro sitio web. En esta sesión, evaluamos tus necesidades, te explicamos cómo nuestro modelo puede beneficiarte y te recomendamos el paquete de tokens ideal para empezar a proteger tu empresa."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Necesito firmar un contrato de iguala a largo plazo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Esa es la belleza de nuestro modelo. No hay contratos forzosos ni igualas mensuales. Simplemente adquieres tus tokens y los usas a tu ritmo. La relación se basa en la confianza y los resultados, no en un papel que te ate."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Qué métodos de pago aceptan para la compra de tokens?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Aceptamos transferencia bancaria (SPEI), tarjetas de crédito y débito a través de un enlace de pago seguro. Emitimos la factura correspondiente por la compra de tu paquete de tokens de inmediato."
-      }
-    }, {
-      "@type": "Question",
-      "name": "¿Los tokens tienen fecha de vencimiento?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nuestros paquetes de tokens estándar tienen una vigencia de 12 meses a partir de la fecha de compra, dándote amplia flexibilidad para utilizarlos. Siempre te notificaremos antes de que se acerque la fecha de vencimiento."
-      }
-    }]
+    ]
   }
   </script>
 </body>
