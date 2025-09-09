@@ -2,64 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Página principal -->
+  <!-- PÁGINAS PRINCIPALES -->
   <url>
     <loc>https://armlaboral.com/</loc>
     <image:image>
-      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
-      <image:title>Logo ARm Laboral</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://armlaboral.com/logo-header-dark-80.webp</image:loc>
-      <image:title>Logo ARm Laboral (versión oscura)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://armlaboral.com/facebook_80.webp</image:loc>
-      <image:title>Facebook ARm Laboral</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://armlaboral.com/instagram_80.webp</image:loc>
-      <image:title>Instagram ARm Laboral</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://armlaboral.com/og-image.jpg</image:loc>
-      <image:title>ARm Laboral — Asesoría y Defensa Legal</image:title>
+      <image:title>ARm Laboral — Asesoría y Defensa Legal para Empresas en México</image:title>
     </image:image>
   </url>
-
-  <!-- Página Nosotros -->
   <url>
     <loc>https://armlaboral.com/nosotros.html</loc>
     <image:image>
-      <image:loc>https://armlaboral.com/nosotros-page-q80.webp</image:loc>
-      <image:title>Equipo ARm Laboral</image:title>
+      <image:loc>https://armlaboral.com/img/nosotros-page-q80.webp</image:loc>
+      <image:title>Equipo de ARm Laboral en reunión estratégica</image:title>
     </image:image>
   </url>
-
-  <!-- Página Soluciones -->
   <url>
     <loc>https://armlaboral.com/soluciones.html</loc>
     <image:image>
-      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
-      <image:title>Logo ARm Laboral</image:title>
+      <image:loc>https://armlaboral.com/og-image.jpg</image:loc>
+      <image:title>Soluciones Legales por Tokens — ARm Laboral</image:title>
     </image:image>
   </url>
 
-  <!-- Página Contacto -->
+  <!-- SECCIÓN DE BLOG -->
   <url>
-    <loc>https://armlaboral.com/contacto.html</loc>
+    <loc>https://armlaboral.com/blog.html</loc>
     <image:image>
-      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
-      <image:title>Logo ARm Laboral</image:title>
+      <image:loc>https://armlaboral.com/img/blog/reforma-laboral-portada-1200.webp</image:loc>
+      <image:title>Guía de la Reforma Laboral 2025 para Empresas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/Prevencion-Laboral-1200.webp</image:loc>
+      <image:title>Prevención Laboral como Activo Invisible</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/gestion-inteligente-1200.webp</image:loc>
+      <image:title>Gestión Laboral Inteligente para Empresas</image:title>
     </image:image>
   </url>
-
-  <!-- Página Aviso de privacidad -->
+  
+  <!-- ARTÍCULOS INDIVIDUALES -->
   <url>
-    <loc>https://armlaboral.com/aviso-de-privacidad.html</loc>
+    <loc>https://armlaboral.com/blog/guia-reforma-laboral-2025.html</loc>
     <image:image>
-      <image:loc>https://armlaboral.com/logo-header-80.webp</image:loc>
-      <image:title>Logo ARm Laboral</image:title>
+      <image:loc>https://armlaboral.com/img/blog/reforma-laboral-portada-1200.webp</image:loc>
+      <image:title>Reforma Laboral 2025: Lo que tu empresa necesita saber</image:title>
+      <image:caption>Una guía completa sobre los cambios, riesgos y oportunidades de la nueva reforma laboral en México para empresas.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/Mak-Pic.webp</image:loc>
+      <image:title>Makario Arteaga, Abogado Fundador de ARm Laboral</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/blog/prevencion-laboral-activo-invisible.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/Prevencion-Laboral-1200.webp</image:loc>
+      <image:title>Prevención laboral como un activo estratégico</image:title>
+      <image:caption>Descubre por qué la prevención legal no es un gasto, sino una inversión que blinda a tu empresa contra riesgos y ahorra costos.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://armlaboral.com/blog/gestion-laboral-inteligente.html</loc>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/gestion-inteligente-1200.webp</image:loc>
+      <image:title>Gestión laboral inteligente y eficiente</image:title>
+      <image:caption>Minimiza riesgos y optimiza procesos con una gestión laboral proactiva, clave para la tranquilidad y la eficiencia operativa de tu negocio.</image:caption>
     </image:image>
   </url>
 
