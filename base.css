@@ -1179,17 +1179,7 @@ textarea.input {
 
 .cookie-links span {
     margin: 0 0.5rem;
-}
-.faq-category {
-  /* Añade un espacio grande entre cada bloque de categorías.
-     Ej: entre "Preguntas Generales" y "Sobre el Proceso Legal". */
-  margin-bottom: 2.5rem; /* 40px */
-}
 
-.faq-category h2 {
-  /* Añade un espacio más pequeño debajo del título H2,
-     separándolo de la primera pregunta. */
-  margin-bottom: 1.5rem; /* 24px */
 }
 .faq-category {
   /* Añade un espacio grande entre cada bloque de categorías. */
