@@ -1191,3 +1191,5 @@ textarea.input {
      separándolo de la primera pregunta. */
   margin-bottom: 1.5rem; /* 24px */
 }
+.faq-category h2 {
+   margin-bottom: 80px !important; /* Valor exagerado para que sea obvio */
