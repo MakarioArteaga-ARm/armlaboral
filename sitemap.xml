@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://armlaboral.com/</loc>
     <lastmod>2025-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://armlaboral.com/soluciones.html</loc>
-    <lastmod>2025-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/og-image.jpg</image:loc>
+      <image:title>ARm Laboral — Asesoría y Defensa Legal para Empresas en México</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://armlaboral.com/nosotros.html</loc>
     <lastmod>2025-09-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/nosotros-page-q80.webp</image:loc>
+      <image:title>Equipo de ARm Laboral en reunión estratégica</image:title>
+    </image:image>
   </url>
-   <url>
+  <url>
+    <loc>https://armlaboral.com/soluciones.html</loc>
+    <lastmod>2025-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/og-image.jpg</image:loc>
+      <image:title>Soluciones Legales por Tokens — ARm Laboral</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://armlaboral.com/faqs.html</loc>
     <lastmod>2025-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -37,6 +50,10 @@
     <lastmod>2025-09-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/reforma-laboral-portada-1200.webp</image:loc>
+      <image:title>Guía de la Reforma Laboral 2025 para Empresas</image:title>
+    </image:image>
   </url>
   
   <url>
@@ -44,13 +61,40 @@
     <lastmod>2025-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/reforma-laboral-portada-1200.webp</image:loc>
+      <image:title>Reforma Laboral 2025: Lo que tu empresa necesita saber</image:title>
+      <image:caption>Una guía completa sobre los cambios, riesgos y oportunidades de la nueva reforma laboral en México para empresas.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://armlaboral.com/blog/prevencion-laboral-activo-invisible.html</loc>
     <lastmod>2025-09-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/Prevencion-Laboral-1200.webp</image:loc>
+      <image:title>Prevención laboral como un activo estratégico</image:title>
+      <image:caption>Descubre por qué la prevención legal no es un gasto, sino una inversión que blinda a tu empresa contra riesgos y ahorra costos.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://armlaboral.com/blog/gestion-laboral-inteligente.html</loc>
     <lastmod>2025-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://armlaboral.com/img/blog/gestion-inteligente-1200.webp</image:loc>
+      <image:title>Gestión laboral inteligente y eficiente</image:title>
+      <image:caption>Minimiza riesgos y optimiza procesos con una gestión laboral proactiva, clave para la tranquilidad y la eficiencia operativa de tu negocio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://armlaboral.com/aviso-de-privacidad.html</loc>
+    <lastmod>2025-09-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
