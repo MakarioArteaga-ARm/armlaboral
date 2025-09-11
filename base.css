@@ -1191,5 +1191,12 @@ textarea.input {
      separándolo de la primera pregunta. */
   margin-bottom: 1.5rem; /* 24px */
 }
+.faq-category {
+  /* Añade un espacio grande entre cada bloque de categorías. */
+  margin-bottom: 2.5rem; /* Aprox. 40px */
+}
+
 .faq-category h2 {
-   margin-bottom: 80px !important; /* Valor exagerado para que sea obvio */
+  /* Añade un espacio más pequeño debajo del título H2. */
+  margin-bottom: 1.5rem; /* Aprox. 24px */
+}
