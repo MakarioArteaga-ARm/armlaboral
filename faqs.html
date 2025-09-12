@@ -235,15 +235,26 @@
     </div>
   </footer>
 
-  <div class="whatsapp-fab" id="whatsapp-fab">
-    <img src="whatsapp_40.webp" srcset="whatsapp_40.webp 1x, whatsapp_80.webp 2x" alt="WhatsApp" width="34" height="34" decoding="async" loading="lazy" />
-    <span class="fab-badge">1</span>
+<div class="whatsapp-fab" id="whatsapp-fab">
+  <img src="whatsapp_40.webp" srcset="whatsapp_40.webp 1x, whatsapp_80.webp 2x" alt="WhatsApp" width="34" height="34" decoding="async" loading="lazy" />
+  <span class="fab-badge" id="wapp-badge">1</span>
+</div>
+
+<div class="whatsapp-popup" id="whatsapp-popup" aria-hidden="true">
+  <div class="wapp-header">
+    <div class="wapp-brand">
+      <img src="whatsapp_40.webp" alt="" width="24" height="24">
+      <span>ARm Laboral</span>
+    </div>
+    <button class="wapp-close" id="wapp-close" aria-label="Cerrar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
   </div>
-  <div class="whatsapp-popup" id="whatsapp-popup">
-    <p>¿Hablamos por WhatsApp?</p>
-    <a class="btn primary" href="https://wa.me/528123682595?text=Hola%20ARm%20Laboral" target="_blank">Abrir chat</a>
-    <button class="btn hero-alt" id="close-popup">Cerrar</button>
+  <div class="wapp-body">
+    <p class="wapp-message-text">¿Hablamos por WhatsApp?</p>
+    <a class="btn wapp-go" href="https://wa.me/528123682595?text=Hola%20ARm%20Laboral" target="_blank" rel="noopener">Abrir chat</a>
   </div>
+</div>
   
   <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-title" aria-describedby="cookie-description">
     <div class="cookie-card">
