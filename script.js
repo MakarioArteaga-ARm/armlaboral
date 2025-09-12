@@ -146,13 +146,94 @@ document.addEventListener('DOMContentLoaded', () => {
         animated.forEach(el => el.classList.add('visible'));
     }
 
-    // --- INICIALIZACIÓN DEL BOTÓN DE WHATSAPP ---
+    // --- INICIALIZACIÓN DEL BOTÓN DE WHATSAPP (CON ANIMACIÓN, CLIC FUERA Y MEMORIA) ---
     const fab = document.getElementById('whatsapp-fab');
+    const badge = document.getElementById('wapp-badge');
     const popup = document.getElementById('whatsapp-popup');
-    const closeBtn = document.getElementById('close-popup');
+    const closeBtn = document.getElementById('wapp-close');
 
-    if (fab && popup && closeBtn) {
-        fab.addEventListener('click', () => popup.style.display = 'block');
-        closeBtn.addEventListener('click', () => popup.style.display = 'none');
+    const VISIT_TTL_HOURS = 24;
+    const LS_KEY_LAST_OPEN = 'wapp_last_open_ts_v1';
+
+    // Tiempos de la animación (en milisegundos)
+    const FAB_APPEAR_DELAY = 2000;
+    const BADGE_APPEAR_DELAY = 1000;
+
+    const nowTs = () => Date.now();
+    const hoursSince = (ts) => (nowTs() - ts) / 3600000;
+
+    const shouldShowBadge = () => {
+        try {
+            const raw = localStorage.getItem(LS_KEY_LAST_OPEN);
+            if (!raw) return true;
+            const lastOpenedTs = Number(raw);
+            return isNaN(lastOpenedTs) || hoursSince(lastOpenedTs) >= VISIT_TTL_HOURS;
+        } catch {
+            return true;
+        }
+    };
+    
+    const showBadge = () => {
+        badge?.classList.add('is-shown');
+        badge?.classList.add('has-animation');
+        // Remove animation class after it has played
+        badge?.addEventListener('animationend', () => {
+            badge.classList.remove('has-animation');
+        }, { once: true });
+    };
+
+    const hideBadge = () => {
+        badge?.classList.remove('is-shown');
+    };
+
+    const handleOutsideClick = (event) => {
+        if (!popup.contains(event.target) && !fab.contains(event.target)) {
+            closeWappPopup();
+        }
+    };
+
+    const openWappPopup = () => {
+        if (!popup.classList.contains('is-open')) {
+            popup.classList.add('is-open');
+            popup.setAttribute('aria-hidden', 'false');
+            
+            hideBadge();
+            try {
+                localStorage.setItem(LS_KEY_LAST_OPEN, String(nowTs()));
+            } catch {}
+
+            setTimeout(() => document.addEventListener('click', handleOutsideClick), 0);
+        }
+    };
+
+    const closeWappPopup = () => {
+        if (popup.classList.contains('is-open')) {
+            popup.classList.remove('is-open');
+            popup.setAttribute('aria-hidden', 'true');
+            document.removeEventListener('click', handleOutsideClick);
+        }
+    };
+
+    if (fab && popup) {
+        // Animation orchestrator
+        setTimeout(() => {
+            fab.classList.add('is-visible');
+            if (shouldShowBadge()) {
+                setTimeout(() => {
+                    showBadge();
+                }, BADGE_APPEAR_DELAY);
+            } else {
+                hideBadge();
+            }
+        }, FAB_APPEAR_DELAY);
+
+        // Event listeners for functionality
+        fab.addEventListener('click', (event) => {
+            event.stopPropagation();
+            popup.classList.contains('is-open') ? closeWappPopup() : openWappPopup();
+        });
+        
+        closeBtn?.addEventListener('click', closeWappPopup);
     }
 });
+
